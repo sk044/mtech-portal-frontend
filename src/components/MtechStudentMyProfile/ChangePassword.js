@@ -7,6 +7,11 @@ export default function ChangePassword(props) {
     const [newPass, setNewPass] = useState('');
     const [CnfPass , setCnfPass] = useState('');
     const handleSubmit=()=>{
+        if(newPass.length < 8){
+
+            alert("Password length less than 8");
+            return;
+        }
         if(CnfPass!=newPass)
         {
             console.log("New Password and confirm password are not matching");    
