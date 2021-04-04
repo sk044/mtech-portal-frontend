@@ -11,13 +11,13 @@ import studentinformationMtech from './components/StudentApplicationMtech/Studen
 import mtechstuprofile from './components/MtechStudentMyProfile/StudentMyProfile';
 import applymore from './components/Applymore';
 import UploadGate from './components/uploadgate';
-import UploadPayment from './components/uploadpayment';
+import UploadProfilePic from './components/uploadprofilepic';
 import userResetPassword from './components/Login/LoginAsStudent/userResetPassword'
 import resetPassword from './components/Login/LoginAsStudent/resetPassword'
 const App =() => {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter> 
         <div>
         
         <Switch>
@@ -31,7 +31,7 @@ const App =() => {
             <Route exact path="/mtechstuprofile/:id" component={mtechstuprofile}/>
             <Route exact path="/applymore/:id" component={applymore}/>
             <Route exact path="/uploadgate/:id" component={UploadGate}/>
-            <Route exact path="/uploadpayment/:id" component={UploadPayment}/>
+            <Route exact path="/uploadprofilepic/:id" component={UploadProfilePic}/>
             <Route path="/user-reset-password" component = {userResetPassword} />
             <Route path="/resetPassword/:token" component = {resetPassword} />
           </Switch>

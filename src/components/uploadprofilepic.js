@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export default class UploadPayment extends Component {
+export default class UploadProfilePic extends Component {
 
     constructor(props) {
         super(props);
@@ -10,22 +10,22 @@ export default class UploadPayment extends Component {
         this.onSubmit = this.onSubmit.bind(this); 
 
         this.state = {
-            documentFiles: ''
+            image: ''
         }
     }
 
     onFileChange(e) {
-        this.setState({ documentFiles: e.target.files })
+        this.setState({ image: e.target.files })
     }
 
     onSubmit(e) {
         e.preventDefault()
 
         var formData = new FormData();
-        for (const key of Object.keys(this.state.documentFiles)) {
-            formData.append('documentFiles', this.state.documentFiles[key])
+        for (const key of Object.keys(this.state.image)) {
+            formData.append('image', this.state.image[key])
         }
-        axios.patch('https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/paymentReceiptUpload/'+this.props.match.params.id , formData, {
+        axios.post('https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/profile/pic/'+this.props.match.params.id , formData, {
         }).then(res => {
             console.log(res.data)
         }).then(res=> {console.log(res);
@@ -49,9 +49,9 @@ export default class UploadPayment extends Component {
                 <div className="row">
                     <form onSubmit={this.onSubmit}>
                     <div className="form-group upload_form ">
-                    <label>Payment Receipt</label>
+                    <label>Upload Profile Photo</label>
                         <div className="form-group">
-                            <input type="file" name="documentFiles" onChange={this.onFileChange} multiple />
+                            <input type="file" name="image" onChange={this.onFileChange} multiple />
                         </div>
                         <div className="form-group">
                             <button className="btn btn-primary" type="submit">Upload</button>

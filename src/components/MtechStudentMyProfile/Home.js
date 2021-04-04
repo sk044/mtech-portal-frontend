@@ -6,7 +6,8 @@ export default function Home(props) {
     console.log(props);
     console.log(!props.data?null:props.data.personalInfoUploadStatus);
     console.log(!props.data?null:props.data.gateScoreCard);
-    console.log(!props.data?null:props.data.paymentReceipt);
+    // console.log(!props.data?null:props.data.paymentReceipt);
+    
     
 
     setTimeout(window.onload =  () => {
@@ -16,13 +17,6 @@ export default function Home(props) {
         if(str2 != null){
             var ad8 = document.getElementById("ad8");
             ad8.innerHTML="Uploaded";
-        }
-
-        //for recipt
-        var str3 = !props.data?null:props.data.paymentReceipt;
-        if(str3 != null){
-            var ad9 = document.getElementById("ad9");
-            ad9.innerHTML="Uploaded";
         }
 
         //for status of application
@@ -36,11 +30,13 @@ export default function Home(props) {
 
         //for apply more
         var apply = document.getElementById("apply");
-        if(str=="false")
-        {
-            document.getElementById('apply').style.visibility = 'hidden';
-        }
-        else if(str == "true" && (!props.data?null:props.data.applications.length <= 0)){
+        // if(str=="false")
+        // {
+        //     document.getElementById('apply').style.visibility = 'hidden';
+        // }
+        // else 
+        
+        if(str == "true" && (!props.data?null:props.data.applications.length <= 0)){
             document.getElementById('apply').style.visibility = 'visible';
             apply.innerHTML="Apply";
         }
@@ -51,7 +47,7 @@ export default function Home(props) {
 
 
 
-    },300);   // error comes if user logouts before .5 seconds due to this
+    },100);   // error comes if user logouts before .5 seconds due to this
 
     
     return (
@@ -69,7 +65,7 @@ export default function Home(props) {
                             <h3>
                             <button className="mtech_btn" id="edfi" onClick ={()=>{window.location.href = "/mtechstuinfo/"+props.data._id}} data={props.data}>Fill Basic Application Form</button>
                             <button className="mtech_btn" onClick ={()=>{window.location.href = "/uploadgate/"+props.data._id}} >Upload Gate Score Card</button>
-                            <button className="mtech_btn" onClick ={()=>{window.location.href = "/uploadpayment/"+props.data._id}} >Upload Payment Recipt</button>
+                            <button className="mtech_btn" onClick ={()=>{window.location.href = "/uploadprofilepic/"+props.data._id}} >Upload Profile Pic</button>
                             
 
                             </h3>
@@ -79,7 +75,7 @@ export default function Home(props) {
                     </div>
                 </div>
                 <div className="details">
-                <button className="mtech_btn" id="apply" onClick ={()=>{window.location.href = "/applymore/"+props.data._id}} style={{background:'Salmon',color:"black"}}></button>
+                <button className="mtech_btn" id="apply" onClick ={()=>{window.location.href = "/applymore/"+props.data._id}} style={{background:'Salmon',color:"black"}}>Apply</button>
                     <div className="status">
                         <h4>Filled Forms</h4>
                         <br/>
@@ -111,11 +107,11 @@ export default function Home(props) {
                             <h4 ><a href={!props.data?null:props.data.gateScoreCard}>Download</a></h4>
                             </div>
 
-                            <div className="det">
+                            {/* <div className="det">
                             <h4 id="bd1">Payment Receipt</h4>    
                             <h4 id="ad9">Not Uploaded </h4>
                             <h4 ><a href={!props.data?null:props.data.paymentReceipt}>Download</a></h4>
-                            </div>
+                            </div> */}
 
                         </div>
                     </div>
