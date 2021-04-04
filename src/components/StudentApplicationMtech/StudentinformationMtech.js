@@ -491,7 +491,7 @@ setTimeout(window.onload =  () => {
 			  })
 			.then(res=> {console.log(res);
 			window.alert('Submitting Form');	
-			window.location.href="https://iitp-mtechportal.netlify.app//mtechstuprofile/"+props.match.params.id;
+			window.location.href="https://iitp-mtechportal.netlify.app/mtechstuprofile/"+props.match.params.id;
 			})
 			.catch(err => console.log(err))
 	
@@ -503,7 +503,7 @@ setTimeout(window.onload =  () => {
     return (
         <div className="container">
 			<div className="name">
-            <button className="mtech_btn" onClick ={()=>{window.location.href = "https://iitp-mtechportal.netlify.app//mtechstuprofile/"+props.match.params.id}} style={{background:'Salmon',color:"black"}}>Go to Home</button>
+            <button className="mtech_btn" onClick ={()=>{window.location.href = "https://iitp-mtechportal.netlify.app/mtechstuprofile/"+props.match.params.id}} style={{background:'Salmon',color:"black"}}>Go to Home</button>
             </div>
             <div className="row">
                

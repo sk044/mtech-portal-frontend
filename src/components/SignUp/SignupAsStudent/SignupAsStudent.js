@@ -60,7 +60,7 @@ const SignupAsStudent = (props) => {
             })
         }).then(data => {
             console.log(data);
-            window.location.href="https://iitp-mtechportal.netlify.app//";
+            window.location.href="https://iitp-mtechportal.netlify.app/";
                         }).catch(error => console.log(error))
     }
 

@@ -45,7 +45,7 @@ const LoginAsStudent = () => {
          })
             .then(data => {
                 console.log(data);
-                window.location.href="https://iitp-mtechportal.netlify.app//mtechstuprofile/"+data._id;
+                window.location.href="https://iitp-mtechportal.netlify.app/mtechstuprofile/"+data._id;
                             }).catch(err => {
                 console.log(err)
         })
