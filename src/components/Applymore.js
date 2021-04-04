@@ -155,7 +155,7 @@ export default function Applymore(props) {
         console.log(inputFields);
         console.log(gateExamInfo);
 
-        if(Object.values(errors).every(x => x == '') && Object.values(touched).every(x => x==true)){
+        if(Object.values(errors).every(x => x == '') && Object.values(touched[0]).every(x => x==true)){
             // console.log(files);
             const address = "https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/apply/"+props.match.params.id;
             fetch(address,{
@@ -201,7 +201,7 @@ export default function Applymore(props) {
             
             console.log("success saving details and files");
         }
-        else if(!Object.values(touched).every(x => x==true)){
+        else if(!Object.values(touched[0]).every(x => x==true)){
             alert('Please fill all the fields in the form.');
         }else{
             alert('Please resolve all the errors.');
