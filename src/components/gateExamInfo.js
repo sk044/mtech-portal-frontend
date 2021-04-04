@@ -46,18 +46,18 @@ export default function GateExamInfo(props) {
                         <div className="row">
                             <div className="col-sm-6 text-center">
                                 <Label>Registration No.</Label>
-                                <TextField className="textfield" name="registrationNo" value={inputField.registrationNo} variant="filled" onChange={event=>props.handleChangeInput(index,event)}></TextField>
+                                <TextField className="textfield" name="registrationNo" onBlur={props.handleBlur(index,"registrationNo")} value={inputField.registrationNo} variant="filled" helperText={props.errors.registrationNo} error={Boolean(props.errors.registrationNo)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
                             <div className="col-sm-6 text-center">
                                 <Label>Gate Score out of 100</Label>
-                                <TextField className="textfield" name="gateScore" value={inputField.gateScore} variant="filled" onChange={event=>props.handleChangeInput(index,event)}></TextField>
+                                <TextField className="textfield" name="gateScore" onBlur={props.handleBlur(index,"gateScore")} value={inputField.gateScore} variant="filled" helperText={props.errors.gateScore} error={Boolean(props.errors.gateScore)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
                             
                         </div>
                         <div className="row">
                             <div className="col-sm-6 text-center">
                                 <Label>Gate Paper Code</Label>
-                                <TextField select className="textfield" name="gatePaperCode" value={inputField.gatePaperCode} variant="filled" onChange={event=>props.handleChangeInput(index,event)}>
+                                <TextField select className="textfield" name="gatePaperCode" onBlur={props.handleBlur(index,"gatePaperCode")} value={inputField.gatePaperCode} variant="filled" helperText={props.errors.gatePaperCode} error={Boolean(props.errors.gatePaperCode)} onChange={event=>props.handleChangeInput(index,event)}>
                                 {PaperCodeOptions.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
                                     {option.label}
@@ -67,23 +67,23 @@ export default function GateExamInfo(props) {
                             </div>
                             <div className="col-sm-6 text-center">
                                 <Label>Gate Rank</Label>
-                                <TextField className="textfield" name="gateRank" value={inputField.gateRank} variant="filled" onChange={event=>props.handleChangeInput(index,event)}></TextField>
+                                <TextField className="textfield" name="gateRank" onBlur={props.handleBlur(index,"gateRank")} value={inputField.gateRank} variant="filled" helperText={props.errors.gateRank} error={Boolean(props.errors.gateRank)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
                             
                         </div>
                         <div className="row">
                         <div className="col-sm-6 text-center">
                                 <Label>Gate exam date</Label>
-                                <TextField className="textfield" name="examDate" type="date" value={inputField.examDate} variant="filled" onChange={event=>props.handleChangeInput(index,event)}></TextField>
+                                <TextField className="textfield" name="examDate" type="date" onBlur={props.handleBlur(index,"examDate")} value={inputField.examDate} variant="filled" helperText={props.errors.examDate} error={Boolean(props.errors.examDate)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
 
                             <div className="col-sm-6 text-center">
                                 <Label>Valid Upto</Label>
-                                <TextField className="textfield" name="validUpto" type="date" value={inputField.validUpto} variant="filled" onChange={event=>props.handleChangeInput(index,event)}></TextField>
+                                <TextField className="textfield" name="validUpto" type="date" onBlur={props.handleBlur(index,"validUpto")} value={inputField.validUpto} variant="filled" helperText={props.errors.validUpto} error={Boolean(props.errors.validUpto)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
                             <div className="col-sm-6 text-center">
                                 <Label>Gate coap registration no.</Label>
-                                <TextField className="textfield" name="coapRegistrationNo" value={inputField.coapRegistrationNo} variant="filled" onChange={event=>props.handleChangeInput(index,event)}></TextField>
+                                <TextField className="textfield" name="coapRegistrationNo" onBlur={props.handleBlur(index,"coapRegistrationNo")} value={inputField.coapRegistrationNo} variant="filled" helperText={props.errors.coapRegistrationNo} error={Boolean(props.errors.coapRegistrationNo)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
                             
                         </div>
