@@ -50,7 +50,7 @@ const LoginAsEmployer = () => {
                     // console.log(data.user)
                     // console.log(data.user.name)
                     global.header = true;
-                    window.location.href="http://localhost:3000/admin/"+data._id;
+                    window.location.href="https://iitp-mtechportal.netlify.app//admin/"+data._id;
                     sessionStorage.setItem('value', 'employer')
                     console.log(sessionStorage.getItem('value'));
                     if(data.user.companyname){

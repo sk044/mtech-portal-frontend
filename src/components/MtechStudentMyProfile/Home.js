@@ -29,9 +29,9 @@ export default function Home(props) {
                         <div className="name">
                             <h1>Welcome , {!props.data?null:props.data.name}</h1>
                             <h3>Applicant Id: <span>{!props.data?null:props.data._id}</span> 
-                            <button className="mtech_btn" id="edfi" onClick ={()=>{window.location.href = "http://localhost:3000/mtechstuinfo/"+props.data._id}} data={props.data}>Fill Basic Application Form</button>
-                            <button className="mtech_btn" onClick ={()=>{window.location.href = "http://localhost:3000/uploadgate/"+props.data._id}} >Upload Gate Score Card</button>
-                            <button className="mtech_btn" onClick ={()=>{window.location.href = "http://localhost:3000/uploadpayment/"+props.data._id}} >Upload Payment Recipt</button>
+                            <button className="mtech_btn" id="edfi" onClick ={()=>{window.location.href = "https://iitp-mtechportal.netlify.app//mtechstuinfo/"+props.data._id}} data={props.data}>Fill Basic Application Form</button>
+                            <button className="mtech_btn" onClick ={()=>{window.location.href = "https://iitp-mtechportal.netlify.app//uploadgate/"+props.data._id}} >Upload Gate Score Card</button>
+                            <button className="mtech_btn" onClick ={()=>{window.location.href = "https://iitp-mtechportal.netlify.app//uploadpayment/"+props.data._id}} >Upload Payment Recipt</button>
                             
 
                             </h3>
@@ -41,7 +41,7 @@ export default function Home(props) {
                     </div>
                 </div>
                 <div className="details">
-                <button className="mtech_btn" onClick ={()=>{window.location.href = "http://localhost:3000/applymore/"+props.data._id}} style={{background:'Salmon',color:"black"}}>Apply More</button>
+                <button className="mtech_btn" onClick ={()=>{window.location.href = "https://iitp-mtechportal.netlify.app//applymore/"+props.data._id}} style={{background:'Salmon',color:"black"}}>Apply More</button>
                     <div className="status">
                         <h4>Filled Forms</h4>
                         <br/>
