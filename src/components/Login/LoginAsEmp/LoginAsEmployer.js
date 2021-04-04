@@ -50,7 +50,11 @@ const LoginAsEmployer = () => {
                     // console.log(data.user)
                     // console.log(data.user.name)
                     global.header = true;
-                    window.location.href="/admin/"+data._id;
+                    if(data._id != undefined){
+                        window.location.href="/admin/"+data._id;
+                     }else{
+                         alert("Wrong UserName or Password");
+                     }
                     sessionStorage.setItem('value', 'employer')
                     console.log(sessionStorage.getItem('value'));
                     if(data.user.companyname){
@@ -118,7 +122,7 @@ const LoginAsEmployer = () => {
                         Login
                         
                     </Form.Field>
-                    <Link style={{fontSize:'12px'}} className="newuser" to='/signup'>New User ? SignUp</Link>
+                    {/* <Link style={{fontSize:'12px'}} className="newuser" to='/signup'>New User ? SignUp</Link> */}
                 </div>
                 <Link style={{fontSize:'12px'}} to="/user-reset-password">Forgot Password?</Link>
             </div>

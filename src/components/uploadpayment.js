@@ -49,7 +49,7 @@ export default class UploadPayment extends Component {
                 <div className="row">
                     <form onSubmit={this.onSubmit}>
                     <div className="form-group upload_form ">
-                    <label>Payment Recipt</label>
+                    <label>Payment Receipt</label>
                         <div className="form-group">
                             <input type="file" name="documentFiles" onChange={this.onFileChange} multiple />
                         </div>

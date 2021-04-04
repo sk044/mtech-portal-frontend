@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../Login/logo.png'
 import './StudentMyProfile.css';
 
-export default function ChangePassword() {
+export default function ChangePassword(props) {
     return (
         <div>
             <div className="home">
@@ -12,8 +12,8 @@ export default function ChangePassword() {
                             <img src={logo} alt=""/>
                         </div>
                         <div className="name">
-                            <h1>Welcome , Saransh Jain</h1>
-                            <h3>Applicant Id: <span>GHHGHGDFGDGFDGFH</span></h3>
+                            <h1>Welcome , {!props.data?null:props.data.name}</h1>
+                            {/* <h3>Applicant Id: <span>{!props.data?null:props.data._id}</span></h3> */}
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@ export default function ChangePassword() {
                                     <label htmlFor=""> Current Password <input type="Password" placeholder="Password"/></label>
                                     <label htmlFor=""> New Password <input type="Password" placeholder="Password"/></label>
                                     <label htmlFor=""> Confirm New Password <input type="Password" placeholder="Password"/></label>
-                                    <input type="submit" value="Submit"/>
+                                    <input type="submit" className = "submit_btn" value="Submit"/>
                                 </form>
                             </div>
                         </div>

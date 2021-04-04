@@ -45,7 +45,13 @@ const LoginAsStudent = () => {
          })
             .then(data => {
                 console.log(data);
-                window.location.href="/mtechstuprofile/"+data._id;
+                // console.log(data._id);
+                if(data._id != undefined){
+                   window.location.href="/mtechstuprofile/"+data._id;
+                }else{
+                    alert("Wrong UserName or Password");
+                }
+                
                             }).catch(err => {
                 console.log(err)
         })

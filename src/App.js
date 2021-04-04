@@ -43,3 +43,5 @@ const App =() => {
 
 export default App;
 
+  // "proxy": "https://iitp-mtech-portal-backend.herokuapp.com",proxy for package.json
+

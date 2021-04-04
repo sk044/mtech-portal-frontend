@@ -72,7 +72,7 @@ export default function StudentmyProfile(props) {
                       
                     </Col>
                     <Col md={3}>
-                    <button onClick={funcstatus} type='btn' className="pic_btn">Status</button>
+                    <button onClick={funcstatus} type='btn' className="pic_btn">Help</button>
                     </Col>
                     <Col md={3}>
                     <button onClick={funcpass} type='btn' className="pic_btn">Reset Password</button>

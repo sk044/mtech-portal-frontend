@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../Login/logo.png'
 import './AdminWindow.css';
 
-export default function ChangePassword() {
+export default function ChangePassword(props) {
     return (
         <div>
             <div className="home">

@@ -5,16 +5,48 @@ import './StudentMyProfile.css';
 export default function Home(props) {
     console.log(props);
     console.log(!props.data?null:props.data.personalInfoUploadStatus);
+    console.log(!props.data?null:props.data.gateScoreCard);
+    console.log(!props.data?null:props.data.paymentReceipt);
+    
 
     setTimeout(window.onload =  () => {
 
+        //for scorecard
+        var str2 = !props.data?null:props.data.gateScoreCard;
+        if(str2 != null){
+            var ad8 = document.getElementById("ad8");
+            ad8.innerHTML="Uploaded";
+        }
+
+        //for recipt
+        var str3 = !props.data?null:props.data.paymentReceipt;
+        if(str3 != null){
+            var ad9 = document.getElementById("ad9");
+            ad9.innerHTML="Uploaded";
+        }
+
+        //for status of application
         var str = !props.data?null:props.data.personalInfoUploadStatus.toString();
         var edfi = document.getElementById("edfi");
+
         console.log(str);
         if(str == "true"){
             edfi.innerHTML="Edit Basic Application Form";
         }
-    },500);   // error comes if user logouts before .5 seconds due to this
+
+        //for apply more
+        var apply = document.getElementById("apply");
+        if(str == "true" && str3 != null){
+            apply.innerHTML="Apply";
+        }
+
+        if(!props.data?null:props.data.applications.length > 0){
+            apply.innerHTML="Apply More";
+        }
+
+
+
+    },300);   // error comes if user logouts before .5 seconds due to this
 
     
     return (
@@ -28,7 +60,8 @@ export default function Home(props) {
                         </div>
                         <div className="name">
                             <h1>Welcome , {!props.data?null:props.data.name}</h1>
-                            <h3>Applicant Id: <span>{!props.data?null:props.data._id}</span> 
+                            {/* Applicant Id: <span>{!props.data?null:props.data._id} */}
+                            <h3>
                             <button className="mtech_btn" id="edfi" onClick ={()=>{window.location.href = "/mtechstuinfo/"+props.data._id}} data={props.data}>Fill Basic Application Form</button>
                             <button className="mtech_btn" onClick ={()=>{window.location.href = "/uploadgate/"+props.data._id}} >Upload Gate Score Card</button>
                             <button className="mtech_btn" onClick ={()=>{window.location.href = "/uploadpayment/"+props.data._id}} >Upload Payment Recipt</button>
@@ -41,7 +74,7 @@ export default function Home(props) {
                     </div>
                 </div>
                 <div className="details">
-                <button className="mtech_btn" onClick ={()=>{window.location.href = "/applymore/"+props.data._id}} style={{background:'Salmon',color:"black"}}>Apply More</button>
+                <button className="mtech_btn" id="apply" onClick ={()=>{window.location.href = "/applymore/"+props.data._id}} style={{background:'Salmon',color:"black"}}></button>
                     <div className="status">
                         <h4>Filled Forms</h4>
                         <br/>
@@ -57,6 +90,27 @@ export default function Home(props) {
                             </div>
 
                                 ))}
+
+                        </div>
+                    </div>
+
+                    <div className="status">
+                        <h4>Document Upload Status</h4>
+                        <br/>
+
+                        <div className="status_details">
+
+                        <div className="det">
+                            <h4 id="bd1">Gate Score Card</h4>    
+                            <h4 id="ad8">Not Uploaded</h4>
+                            <h4 ><a href={!props.data?null:props.data.gateScoreCard}>Download</a></h4>
+                            </div>
+
+                            <div className="det">
+                            <h4 id="bd1">Payment Receipt</h4>    
+                            <h4 id="ad9">Not Uploaded </h4>
+                            <h4 ><a href={!props.data?null:props.data.paymentReceipt}>Download</a></h4>
+                            </div>
 
                         </div>
                     </div>

@@ -1,18 +1,40 @@
-import React ,{useState} from 'react'
+import React ,{useState , useEffect} from 'react'
 import {Container, Row, Col ,Button} from  'react-bootstrap';
 import Home from './Home';
 import {Link} from 'react-router-dom'
 import ChangePassword from './ChangePassword';
 
 
-export default function Picwindow() { 
+export default function Picwindow(props) { 
     const [home,sethome]=useState(true);
     const [pass,setpass]=useState(false);
     const [log,setlog]=useState(false);
+    const [data,setData] = useState({});
+    const [aid,setaid] = useState('');
+
+
+        useEffect(() => {
+         console.log(props.match.params.id)
+        // const id = {props.match.params.id}
+        setaid(props.match.params.id);
+        console.log(aid);
+        const id = props.match.params.id;
+        const address = "https://iitp-mtech-portal-backend.herokuapp.com/backend/admin/profile/"+id;
+        console.log(address);
+        fetch(address , {
+            method : 'get'
+        }).then((res) => {
+            if(res.ok)
+                return res.json();
+        }).then((data)=> {
+            console.log(data);
+            setData(data);
+        }).catch(err=>console.log(err))
+        },[]);
 
     const funchome = () => {
         sethome(true);
-        setpass(false);
+        setpass(false); 
         setlog(false);
    }
    const funcstatus = () => {
@@ -55,7 +77,8 @@ export default function Picwindow() {
                 home && pass === false && log === false ? 
                 (
                     <>
-                    <Home/>
+                    <Home />
+                    {/* <Home data={data.adminDetails}/> */}
                     
                     </>
                 )

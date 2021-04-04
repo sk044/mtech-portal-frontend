@@ -91,3 +91,13 @@ button{
     margin-top: 150px ;
     padding:10px 20px ;
 }
+.submit_btn:hover
+{
+    background : Salmon;
+    border: 1px solid black;
+}
+.mtech_btn:hover
+{
+    background: #EFEFEF;
+    border: 1px solid black;
+}

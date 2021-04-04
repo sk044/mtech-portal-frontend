@@ -59,9 +59,14 @@ const SignupAsStudent = (props) => {
                 mobileNo:phone 
             })
         }).then(data => {
-            console.log(data);
-            window.location.href="/";
-                        }).catch(error => console.log(error))
+            console.log(data);         
+            // console.log(data.status)
+            if(data.status == 422){
+                alert("User with this emailID already exists !!")
+            }else{
+                window.location.href="/";
+            }
+            }).catch(error => console.log(error))
     }
 
  

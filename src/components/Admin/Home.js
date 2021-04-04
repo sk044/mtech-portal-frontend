@@ -5,7 +5,7 @@ import './AdminWindow.css';
 import { ExportToCsv } from 'export-to-csv';
 
 
-export default function Home() {
+export default function Home(props) {
 
         const getReport = async function(dept){
             const jsonUrl = 'https://iitp-mtech-portal-backend.herokuapp.com/backend/admin/exportToCSV' //write url
@@ -17,7 +17,7 @@ export default function Home() {
                 },
                 body:JSON.stringify({
                 department: dept,
-                }) 
+                })  
             }).then((res) => {
             if(res.ok)
                 return res.json();
@@ -63,7 +63,7 @@ export default function Home() {
                             <img src={logo} alt=""/>
                         </div>
                         <div className="name">
-                            <h1>Welcome </h1>
+                            <h1>Welcome , Admin </h1>
                              
                                
                         </div>
@@ -79,8 +79,8 @@ export default function Home() {
                                 <button onClick={() => getReport("Mechatronics")} >Download CSV</button>
                             </div>
                             <div className="det">
-                                <h3>Mathematics and Computing</h3>
-                                <button onClick={() => getReport("Mathematics and Computing")}>Download CSV</button>
+                                <h3>Mathematics & Computing</h3>
+                                <button onClick={() => getReport("Mathematics & Computing")}>Download CSV</button>
                             </div>
                             <div className="det">
                                 <h3>Computer Science & Engineering</h3>
