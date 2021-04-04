@@ -45,7 +45,7 @@ const LoginAsStudent = () => {
          })
             .then(data => {
                 console.log(data);
-                window.location.href="http://localhost:3000/mtechstuprofile/"+data._id;
+                window.location.href="/mtechstuprofile/"+data._id;
                             }).catch(err => {
                 console.log(err)
         })
