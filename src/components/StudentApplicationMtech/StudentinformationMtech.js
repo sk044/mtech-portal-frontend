@@ -325,43 +325,48 @@ export default function StudentinformationMtech(props) {
 
 ///for edit data
 
-// setTimeout(window.onload =  () => {
+const setUp =  () => {
 
-// 	// console.log(props.match.params.id)
-// 	// const id = {props.match.params.id}
+	// console.log(props.match.params.id)
+	// const id = {props.match.params.id}
  
  
-// 	const id = props.match.params.id;
-// 	const address = "https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/profile/"+id;
-// 	fetch(address , {
-// 		method : 'get'
-// 	}).then((res) => {
-// 		if(res.ok)
-// 			return res.json();
-// 	}).then((data)=> {
+	const id = props.match.params.id;
+	const address = "https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/profile/"+id;
+	fetch(address , {
+		method : 'get'
+	}).then((res) => {
+		if(res.ok)
+			return res.json();
+	}).then((data)=> {
 
-// 		console.log(data.applicantDetails.name);
+		console.log(data.applicantDetails.name);
 
 
-// 		if(data.applicantDetails.personalInfoUploadStatus == true){
+		if(data.applicantDetails.personalInfoUploadStatus == true){
 
-// 			inputFields[0].name = data.applicantDetails.name;
-// 			inputFields[0].dob = data.applicantDetails.dob;			
-// 			inputFields[0].nationality = data.applicantDetails.nationality;
-// 			inputFields[0].gender = data.applicantDetails.gender;
-// 			inputFields[0].birthCategory = data.applicantDetails.birthCategory;
-// 			inputFields[0].category = data.applicantDetails.category;
-// 			inputFields[0].martialStatus = data.applicantDetails.martialStatus;
-// 			inputFields[0].physicallyHandicapped = data.applicantDetails.physicallyHandicapped;
-// 			inputFields[0].guardianOrSpouseName = data.applicantDetails.guardianOrSpouseName;
+			inputFields[0].name = data.applicantDetails.name;
+			inputFields[0].dob = data.applicantDetails.dob;			
+			inputFields[0].nationality = data.applicantDetails.nationality;
+			inputFields[0].gender = data.applicantDetails.gender;
+			inputFields[0].birthCategory = data.applicantDetails.birthCategory;
+			inputFields[0].category = data.applicantDetails.category;
+			inputFields[0].martialStatus = data.applicantDetails.martialStatus;
+			inputFields[0].physicallyHandicapped = data.applicantDetails.physicallyHandicapped;
+			inputFields[0].guardianOrSpouseName = data.applicantDetails.guardianOrSpouseName;
 			
-// 			contactDetails[0] = data.applicantDetails.contactDetails;
-// 			// academicQual[0] = data.applicantDetails.academicQualification[0];
-// 			const values=[...inputFields];
-// 			setinputField(values);
-// 		}
-// 	})	
-// },1000);
+			contactDetails[0] = data.applicantDetails.contactDetails;
+			// academicQual[0] = data.applicantDetails.academicQualification[0];
+			const values=[...inputFields];
+			setinputField(values);
+		}
+	})	
+};
+
+
+	React.useEffect(() => {
+		setUp();
+	},[]);
 
 ////
 
