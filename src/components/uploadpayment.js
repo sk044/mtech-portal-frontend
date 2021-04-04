@@ -30,7 +30,7 @@ export default class UploadPayment extends Component {
             console.log(res.data)
         }).then(res=> {console.log(res);
             window.alert('Uploading ...');
-			window.location.href="https://iitp-mtechportal.herokuapp.com//mtechstuprofile/"+this.props.match.params.id;
+			window.location.href="http://localhost:3000/mtechstuprofile/"+this.props.match.params.id;
 			})
         .catch(err => console.log(err))
     }
@@ -39,7 +39,7 @@ export default class UploadPayment extends Component {
         return (
             <div className="container">
               <div className="name">
-            <button className="mtech_btn" onClick ={()=>{window.location.href = "https://iitp-mtechportal.herokuapp.com//mtechstuprofile/"+this.props.match.params.id}} style={{background:'Salmon',color:"black"}}>Go to Home</button>
+            <button className="mtech_btn" onClick ={()=>{window.location.href = "http://localhost:3000/mtechstuprofile/"+this.props.match.params.id}} style={{background:'Salmon',color:"black"}}>Go to Home</button>
             </div>
             <div className="row text-center">
                 <div className="col-md-12">

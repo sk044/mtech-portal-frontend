@@ -107,7 +107,7 @@ export default function Applymore(props) {
           })
         .then(res=> {console.log(res);
             window.alert('Submitting Form');
-			window.location.href="https://iitp-mtechportal.herokuapp.com//mtechstuprofile/"+props.match.params.id;
+			window.location.href="http://localhost:3000/mtechstuprofile/"+props.match.params.id;
 			})
         .catch(err => console.log(err))
 
@@ -122,7 +122,7 @@ export default function Applymore(props) {
     return (
         <div className="container">
             <div className="name">
-            <button className="mtech_btn" onClick ={()=>{window.location.href = "https://iitp-mtechportal.herokuapp.com//mtechstuprofile/"+props.match.params.id}} style={{background:'Salmon',color:"black"}}>Go to Home</button>
+            <button className="mtech_btn" onClick ={()=>{window.location.href = "http://localhost:3000/mtechstuprofile/"+props.match.params.id}} style={{background:'Salmon',color:"black"}}>Go to Home</button>
             </div>
             <div className="row">
                
