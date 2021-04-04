@@ -407,7 +407,7 @@ const setUp =  () => {
         setAcademicQual(values);
     }
 
-	const handleChangeInputProfessional=(index,event)=>{
+	const handleChangeInputProfessional=(index,event)=>{ 
         console.log(index,event.target.name)
         const values=[...professionalExp];
         values[index][event.target.name]=event.target.value
@@ -419,7 +419,7 @@ const setUp =  () => {
 
 
 	const handleAddFieldsProfessional=()=>{
-        setProfessionalExp([...professionalExp,{experienceType:'',organization:'',positionHeld:'',fromDate:'',toDate:'',natureOfWork:'',isCurrentJob:''}])
+        setProfessionalExp([...professionalExp,{experienceType:'',organization:'',positionHeld:'',fromDate:'',toDate:'',natureOfWork:'',isCurrentJob:'',experienceDuration:''}])
     }
     const handleRemoveFieldsProfessional=(index)=>{
         const values=[...professionalExp];
@@ -439,7 +439,8 @@ const setUp =  () => {
 			fetch(address,{
 				method:"post",
 				headers:{
-					"Content-Type" : "application/json"
+					"Content-Type" : "application/json",
+					
 				},
 				body:JSON.stringify({
 					name:inputFields[0].name,
