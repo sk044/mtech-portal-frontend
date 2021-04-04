@@ -27,21 +27,21 @@ export default class userResetPassword extends React.Component {
       userName:this.state.userName,
       role:this.state.role,
     }
-    if(this.state.role==="Student"||this.state.role==="Coordinator")
+    if(this.state.role==="Applicant"||this.state.role==="Admin")
     {
       payload={
-        userName:this.state.userName.toUpperCase(),
+        userName:this.state.userName,
         role:this.state.role,
       }
     }
-     await axios.post('/backend/forgotPassword',payload)
+     await axios.post('https://iitp-mtech-portal-backend.herokuapp.com/backend/forgotPassword',payload)
     .then((s)=>
     {
       alert("Mail has been sent to your personal email");
       setTimeout(() => {
         this.setState({
           loading:false,
-          redirect:"/login",
+          redirect:"/",
         })
       }, 2000);
 

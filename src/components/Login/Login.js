@@ -64,7 +64,7 @@ class Signup extends Component{
                         <div className="col-md-4 p-0 padding_0">
                             <div className="text-center loginsignup">
                                 <img src={logo} alt="image" className="center logo_form"></img>
-                                <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "</p>
+                                <h1 style={{marginTop:"50px"}}>IIT Patna</h1>
                                 
                             </div>
                         </div>

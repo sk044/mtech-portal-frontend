@@ -34,9 +34,9 @@ export default class ResetPassword extends React.Component {
     if(this.state.match===1)
     {
       let payload={token:this.state.token,newPassword:this.state.password1}
-      axios.patch("/backend/resetPassword",payload)
+      axios.patch("https://iitp-mtech-portal-backend.herokuapp.com/backend/resetPassword",payload)
       .then((s)=>{
-        this.setState({redirect:"/login"})
+        this.setState({redirect:"/"})
       })
       .catch((e)=>{
         alert("Could not Reset Password.\n Consult Admin");

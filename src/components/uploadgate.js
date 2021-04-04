@@ -50,7 +50,7 @@ export default class UploadGate extends Component {
                 <div className="row">
                     <form onSubmit={this.onSubmit}>
                     <div className="form-group upload_form ">
-                    <label>Gate Score Card</label>
+                    <label>Gate Score Card <light>(Upload pdf only)</light></label>
                         <div className="form-group">
                             <input type="file" name="documentFiles" onChange={this.onFileChange} multiple />
                         </div>
