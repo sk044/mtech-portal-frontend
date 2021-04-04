@@ -357,6 +357,8 @@ setTimeout(window.onload =  () => {
 			
 			contactDetails[0] = data.applicantDetails.contactDetails;
 			// academicQual[0] = data.applicantDetails.academicQualification[0];
+			const values=[...inputFields];
+			setinputField(values);
 		}
 	})	
 },1000);
@@ -505,6 +507,9 @@ setTimeout(window.onload =  () => {
 			<div className="name">
             <button className="mtech_btn" onClick ={()=>{window.location.href = "/mtechstuprofile/"+props.match.params.id}} style={{background:'Salmon',color:"black"}}>Go to Home</button>
             </div>
+			{/* <div className="name">
+            <button className="mtech_btn" onClick ={()=>editapplication()}>Load Previous Data</button>
+            </div> */}
             <div className="row">
                
                 {inputFields.map((inputField,index)=>(

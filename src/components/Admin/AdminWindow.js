@@ -5,32 +5,13 @@ import {Link} from 'react-router-dom'
 import ChangePassword from './ChangePassword';
 
 
-export default function Picwindow(props) { 
+export default function Picwindow() { 
     const [home,sethome]=useState(true);
     const [pass,setpass]=useState(false);
     const [log,setlog]=useState(false);
-    const [data,setData] = useState({});
-    const [aid,setaid] = useState('');
 
 
-        useEffect(() => {
-         console.log(props.match.params.id)
-        // const id = {props.match.params.id}
-        setaid(props.match.params.id);
-        console.log(aid);
-        const id = props.match.params.id;
-        const address = "https://iitp-mtech-portal-backend.herokuapp.com/backend/admin/profile/"+id;
-        console.log(address);
-        fetch(address , {
-            method : 'get'
-        }).then((res) => {
-            if(res.ok)
-                return res.json();
-        }).then((data)=> {
-            console.log(data);
-            setData(data);
-        }).catch(err=>console.log(err))
-        },[]);
+
 
     const funchome = () => {
         sethome(true);
@@ -78,7 +59,6 @@ export default function Picwindow(props) {
                 (
                     <>
                     <Home />
-                    {/* <Home data={data.adminDetails}/> */}
                     
                     </>
                 )
@@ -91,7 +71,7 @@ export default function Picwindow(props) {
                 :home === false && pass===false && log ?
                 (   <>
                     
-                    <h1>ghhab sjmdvfb</h1>
+                    {/* <h1>ghhab sjmdvfb</h1> */}
                     </>
                 )  
                 :null
