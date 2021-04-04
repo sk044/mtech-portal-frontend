@@ -36,11 +36,16 @@ export default function Home(props) {
 
         //for apply more
         var apply = document.getElementById("apply");
-        if(str == "true" && str3 != null){
+        if(str=="false")
+        {
+            document.getElementById('apply').style.visibility = 'hidden';
+        }
+        else if(str == "true" && (!props.data?null:props.data.applications.length <= 0)){
+            document.getElementById('apply').style.visibility = 'visible';
             apply.innerHTML="Apply";
         }
-
-        if(!props.data?null:props.data.applications.length > 0){
+        else if(!props.data?null:props.data.applications.length > 0){
+            document.getElementById('apply').style.visibility = 'visible';
             apply.innerHTML="Apply More";
         }
 

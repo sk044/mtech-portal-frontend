@@ -32,7 +32,7 @@ export default function GateExamInfo(props) {
         {label:"Life Sciences (XL)", value:"Life Sciences (XL)"},
         {label:"Humanities and Social Sciences (XH)", value:"Humanities and Social Sciences (XH)"},
         {label:"Statistics (ST)", value:"Statistics (ST)"},
-                
+        {label:"Not Applicable (NA)", value:"Not Applicable (NA)"},
             ]
 
     
@@ -43,13 +43,24 @@ export default function GateExamInfo(props) {
              {props.inputFields.map((inputField,index)=>(
                  <div className="p-5 si_div" key={index}>
                         <h1>Gate exam info</h1>
+                        <p>If you are from an IIT and have not appeared for GATE exam, fill the details as mentioned below:</p>
+                        <ol style={{marginBottom:"5%"}}>
+                            <li>Registration No. : -1</li>
+                            <li>Gate Score out of 1000 : -1</li>
+                            <li>Gate Rank : -1</li>
+                            <li>Gate coap registration no. : -1</li>
+                            <li>Gate Paper Code : Not Applicable (NA)</li>
+                            <li>Gate exam date : today's date</li>
+                            <li>Valid Upto : today's date</li>
+                        </ol>
+                        
                         <div className="row">
                             <div className="col-sm-6 text-center">
                                 <Label>Registration No.</Label>
                                 <TextField className="textfield" name="registrationNo" onBlur={props.handleBlur(index,"registrationNo")} value={inputField.registrationNo} variant="filled" helperText={props.errors.registrationNo} error={Boolean(props.errors.registrationNo)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
                             <div className="col-sm-6 text-center">
-                                <Label>Gate Score out of 100</Label>
+                                <Label>Gate Score out of 1000</Label>
                                 <TextField className="textfield" name="gateScore" onBlur={props.handleBlur(index,"gateScore")} value={inputField.gateScore} variant="filled" helperText={props.errors.gateScore} error={Boolean(props.errors.gateScore)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
                             

@@ -116,24 +116,24 @@ export default function Applymore(props) {
         const gateRankreg = /^\d{1,}$/;
         if(touched[0].gateRank && gateRank.length==0)
             errors.gateRank = 'Please fill the box';
-        else if(touched[0].gateRank && !gateRankreg.test(gateRank))
+        else if(touched[0].gateRank && !gateRankreg.test(gateRank) && gateRank!='-1')
             errors.gateRank = 'Gate Rank should contain only numbers';
 
         const coapreg = /^COAP\d{8}$/;
         if(touched[0].coapRegistrationNo && coapRegistrationNo.length==0)
             errors.coapRegistrationNo = 'Please fill the box';
-        else if(touched[0].coapRegistrationNo && !coapreg.test(coapRegistrationNo))
+        else if(touched[0].coapRegistrationNo && !coapreg.test(coapRegistrationNo) && coapRegistrationNo!='-1')
             errors.coapRegistrationNo = 'Gate coap registration Number format is wrong';
 
         const registrationNoreg = /^[1-9][0-9][a-zA-Z0-9]{9}$/;
         if(touched[0].registrationNo && registrationNo.length==0)
             errors.registrationNo = 'Please fill the box';
-        else if(touched[0].registrationNo && !registrationNoreg.test(registrationNo))
+        else if(touched[0].registrationNo && !registrationNoreg.test(registrationNo) && registrationNo!='-1')
             errors.registrationNo = 'Registration Number format is wrong';
 
         if(touched[0].gateScore && gateScore.length==0)
             errors.gateScore = 'Please fill the box';
-        else if(touched[0].gateScore && parseInt(gateScore)>1000)
+        else if(touched[0].gateScore && parseInt(gateScore)>1000 && parseInt(gateScore)<-1 ) 
             errors.gateScore = 'Gate Score should be less than 1000';
 
         if(touched[0].examDate && examDate.length==0)

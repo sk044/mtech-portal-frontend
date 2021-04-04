@@ -520,6 +520,7 @@ const setUp =  () => {
                 {inputFields.map((inputField,index)=>(
                     <div className="p-5 si_div" key={index}>
                         <h1 className="text-center si_subhead">Student Information</h1>
+						<p style={{marginBottom:"5%",textAlign:"center"}}>* After editing, please fill the Academic Qualifications and Work Experience before submitting.</p>
                         <div className="row">
                             <div className="col-sm-6 text-center">
                                 <Label>Name of the Applicant:</Label>
