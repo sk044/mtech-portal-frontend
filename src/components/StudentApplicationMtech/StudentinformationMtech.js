@@ -325,7 +325,7 @@ export default function StudentinformationMtech(props) {
 
 ///for edit data
 
-setTimeout(window.onload =  () => {
+const setUp =  () => {
 
 	// console.log(props.match.params.id)
 	// const id = {props.match.params.id}
@@ -361,7 +361,12 @@ setTimeout(window.onload =  () => {
 			setinputField(values);
 		}
 	})	
-},1000);
+};
+
+
+	React.useEffect(() => {
+		setUp();
+	},[]);
 
 ////
 
