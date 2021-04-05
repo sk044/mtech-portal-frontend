@@ -11,7 +11,7 @@ export default function Home(props) {
     
 
     setTimeout(window.onload =  () => {
-           
+       
         //for scorecard
         var str2 = !props.data?null:props.data.gateScoreCard;
         if(str2 != null){
