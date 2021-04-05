@@ -12,10 +12,10 @@ export default function Home(props) {
 
     setTimeout(window.onload =  () => {
             
-        if(props.data === null)
+        if(props.data)
         {
             var i = 0;
-            while(props.data !== null)
+            while(!props.data)
             {
                 console.log(i);
                 i = i+1;
