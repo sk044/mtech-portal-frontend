@@ -14,7 +14,8 @@ export default function Home(props) {
     console.log(localStorage.getItem('authToken'));
 
     if(props.data!==undefined){
-        var str2 = props.data===null?null:props.data.documentUploadStatus;
+        var str2 = props.data===null?null:props.data.gateScoreCard;
+        if(document.getElementById("ad8") !== null){
         if(str2 != null){
             var ad8 = document.getElementById("ad8");
             ad8.innerHTML="Uploaded";
@@ -36,7 +37,7 @@ export default function Home(props) {
         //     document.getElementById('apply').style.visibility = 'hidden';
         // }
         // else 
-        console.log(!props.data.personalInfoUploadStatus)
+        console.log(!props.data.personalInfoUploadStatus);
         if(!props.data.personalInfoUploadStatus)
         {
             console.log("Hidden");
@@ -50,7 +51,7 @@ export default function Home(props) {
             document.getElementById('apply').style.visibility = 'visible';
             apply.innerHTML="Apply More";
         }
-
+    }
     }
 
     
@@ -65,17 +66,12 @@ export default function Home(props) {
                         </div>
                         <div className="name">
                             <h1>Welcome , {!props.data?null:props.data.name}</h1>
-                            {/* Applicant Id: <span>{!props.data?null:props.data._id} */}
                             <h3>
                             <button className="mtech_btn" id="edfi" onClick ={()=>{window.location.href = "/mtechstuinfo/"+props.data._id}} data={props.data}>Fill Basic Application Form</button>
                             <button className="mtech_btn" onClick ={()=>{window.location.href = "/uploadgate/"+props.data._id}} >Upload Gate Score Card</button>
-                            <button className="mtech_btn" onClick ={()=>{window.location.href = "/uploadprofilepic/"+props.data._id}} >Upload Profile Pic</button>
-                            
-
-                            </h3>
-                               
-                        </div>
-                        
+                            <button className="mtech_btn" onClick ={()=>{window.location.href = "/uploadprofilepic/"+props.data._id}} >Upload Profile Pic</button>                           
+                            </h3>                              
+                        </div>     
                     </div>
                 </div>
                 <div className="details">
@@ -83,9 +79,7 @@ export default function Home(props) {
                     <div className="status">
                         <h4>Filled Forms</h4>
                         <br/>
-
                         <div className="status_details">
-
                      {!props.data?null:props.data.applications.map((element) => (
 
                             <div className="det" key={element.applicationId}>
@@ -93,9 +87,7 @@ export default function Home(props) {
                             <h4 id="ad1">{element.department}</h4>
                             <h4 id="bd1">{element.applicationCategory}</h4>
                             </div>
-
                                 ))}
-
                         </div>
                     </div>
 
