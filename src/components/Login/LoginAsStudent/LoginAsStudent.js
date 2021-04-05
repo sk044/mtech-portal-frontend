@@ -8,6 +8,8 @@ import '../Login.css';
 const LoginAsStudent = () => {
     const [emailID, setEmailID] = React.useState('')
     const [password, setPassword] = React.useState('')
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('refreshToken');
 
 
     function handleSubmit(){
@@ -33,6 +35,8 @@ const LoginAsStudent = () => {
             headers: {
                 "Accept" : "application/json",
                 "Content-Type": "application/json",
+                'x-auth-token': localStorage.getItem('authToken'),
+                'x-refresh-token': localStorage.getItem('refreshToken'),
             },
             body:JSON.stringify({
                 userName:emailID,
@@ -40,12 +44,15 @@ const LoginAsStudent = () => {
             }) 
         }).then((res) => {
             // console.log(res);
+            console.log(res.headers.get("x-auth-token"));
+            localStorage.setItem('authToken',res.headers.get("x-auth-token"));
+            localStorage.setItem('refreshToken',res.headers.get("x-refresh-token"));
+
                  return res.json()
-             
+
          })
-            .then(data => {
+            .then((data) => {
                 console.log(data);
-                // console.log(data._id);
                 if(data._id != undefined){
                    window.location.href="/mtechstuprofile/"+data._id;
                 }else{

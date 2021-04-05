@@ -26,6 +26,12 @@ export default class UploadProfilePic extends Component {
             formData.append('image', this.state.image[key])
         }
         axios.post('/backend/applicant/profile/pic/'+this.props.match.params.id , formData, {
+
+            headers: {
+                'x-auth-token': localStorage.getItem('authToken'),
+                'x-refresh-token': localStorage.getItem('refreshToken'),
+            }
+
         }).then(res => {
             console.log(res.data)
         }).then(res=> {console.log(res);

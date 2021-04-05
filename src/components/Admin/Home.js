@@ -13,7 +13,9 @@ export default function Home() {
             const json = await fetch(jsonUrl , {
                 method : 'post',
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    'x-auth-token': localStorage.getItem('authToken'),
+                    'x-refresh-token': localStorage.getItem('refreshToken'),
                 },
                 body:JSON.stringify({
                 department: dept,

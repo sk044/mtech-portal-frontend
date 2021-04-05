@@ -338,7 +338,8 @@ export default function StudentinformationMtech(props) {
 
 ///for edit data
 
-const setUp =  () => {
+// const setUp =  () => {
+	setTimeout(window.onload =  () => {
 
 	// console.log(props.match.params.id)
 	// const id = {props.match.params.id}
@@ -347,7 +348,12 @@ const setUp =  () => {
 	const id = props.match.params.id;
 	const address = "/backend/applicant/profile/"+id;
 	fetch(address , {
-		method : 'get'
+		method : 'get',
+		headers:{
+			"Content-Type" : "application/json",
+			'x-auth-token': localStorage.getItem('authToken'),
+			'x-refresh-token': localStorage.getItem('refreshToken'),
+		},
 	}).then((res) => {
 		if(res.ok)
 			return res.json();
@@ -373,13 +379,14 @@ const setUp =  () => {
 			const values=[...inputFields];
 			setinputField(values);
 		}
-	})	
-};
+	})
+},300);	
+// };
 
 
-	React.useEffect(() => {
-		setUp();
-	},[]);
+	// React.useEffect(() => {
+	// 	setUp();
+	// },[]);
 
 ////
 
@@ -524,6 +531,8 @@ const setUp =  () => {
 					method:"post",
 					headers:{
 						"Content-Type" : "application/json",
+						'x-auth-token': localStorage.getItem('authToken'),
+						'x-refresh-token': localStorage.getItem('refreshToken'),
 						
 					},
 					body:JSON.stringify({

@@ -10,7 +10,8 @@ export default function Home(props) {
     
     
 
-    console.log("Hello"+props.data)
+    console.log("Hello"+props.data);
+    console.log(localStorage.getItem('authToken'));
 
     if(props.data!==undefined){
         var str2 = props.data===null?null:props.data.documentUploadStatus;

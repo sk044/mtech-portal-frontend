@@ -21,7 +21,9 @@ export default function ChangePassword(props) {
         fetch(address,{
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'x-auth-token': localStorage.getItem('authToken'),
+                'x-refresh-token': localStorage.getItem('refreshToken'),
               },
               method: 'PATCH',
               body : JSON.stringify({
@@ -34,8 +36,9 @@ export default function ChangePassword(props) {
         }).then(data => {
             console.log(data);
             console.log("Password is reset");
-            window.alert('Password is reset!!');
-			window.location.href="/mtechstuprofile/"+props.data._id;
+            window.alert('Password is reset!! Redirecting to Login!!');
+			window.location.href="/";
+            
             
         }).catch(err=>{
             console.log(err)

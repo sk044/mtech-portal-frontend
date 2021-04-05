@@ -161,7 +161,9 @@ export default function Applymore(props) {
             fetch(address,{
                 method:"post",
                 headers:{
-                    "Content-Type" : "application/json"
+                    "Content-Type" : "application/json",
+                    'x-auth-token': localStorage.getItem('authToken'),
+                    'x-refresh-token': localStorage.getItem('refreshToken'),
                 },
                 body:JSON.stringify({
                     applicationCategory:inputFields[0].applicationCategory,

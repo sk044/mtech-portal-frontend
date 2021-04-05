@@ -36,7 +36,9 @@ const SignupAsStudent = (props) => {
             method:'POST',
             headers:{
                 'Content-type':'application/json',
-                'Authorization': "Bearer" + localStorage.getItem("jwt")
+                'Authorization': "Bearer" + localStorage.getItem("jwt"),
+                'x-auth-token': localStorage.getItem('authToken'),
+                'x-refresh-token': localStorage.getItem('refreshToken'),
             },
             body:JSON.stringify({
                 firstname:firstName,

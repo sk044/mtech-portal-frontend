@@ -22,7 +22,9 @@ export default function ChangePassword() {
         fetch(address,{
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'x-auth-token': localStorage.getItem('authToken'),
+                'x-refresh-token': localStorage.getItem('refreshToken'),
               },
               method: 'PATCH',
               body : JSON.stringify({

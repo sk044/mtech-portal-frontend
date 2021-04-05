@@ -26,6 +26,14 @@ export default class UploadGate extends Component {
             formData.append('documentFiles', this.state.documentFiles[key])
         }
         axios.patch('/backend/applicant/gateScoreCardUpload/'+this.props.match.params.id , formData, {
+
+            headers: {
+                'x-auth-token': localStorage.getItem('authToken'),
+                'x-refresh-token': localStorage.getItem('refreshToken'),
+            }
+
+            
+
         }).then(res => {
             console.log(res.data)
         }).then(res=> {console.log(res);
