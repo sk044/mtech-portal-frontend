@@ -21,6 +21,10 @@ export default function Home(props) {
                 i = i+1;
             }
         }
+        else
+        {
+            console.log("Hello");
+        }
         //for scorecard
         var str2 = !props.data?null:props.data.gateScoreCard;
         if(str2 != null){
