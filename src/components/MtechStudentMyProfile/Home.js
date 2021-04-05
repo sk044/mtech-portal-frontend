@@ -15,7 +15,7 @@ export default function Home(props) {
         if(!props.data)
         {
             var i = 0;
-            while(!props.data)
+            while(!props.data?true:false)
             {
                 console.log(i);
                 i = i+1;
