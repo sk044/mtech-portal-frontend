@@ -157,7 +157,7 @@ export default function Professional(props) {
                     </div>
                 ))}
 
-            <p style={{fontSize:"13px"}}>Note: If you are editing the form , Please fill this section again.</p>
+            <p style={{fontSize:"13px"}}>Note: If you are editing the form , Please fill the Work Experience section again.</p>
             </form>
             <hr/> 
         </Container>

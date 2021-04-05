@@ -145,6 +145,11 @@ export default function Academics(props) {
         {label:"2019",value:"2019"},
         {label:"2020",value:"2020"},
         {label:"2021",value:"2021"},
+        {label:"2022",value:"2022"},
+        {label:"2023",value:"2023"},
+        {label:"2024",value:"2024"},
+        // {label:"2025",value:"2025"},
+        // {label:"2026",value:"2026"},
               
     ]
     return (
@@ -227,7 +232,7 @@ export default function Academics(props) {
                         className="textfield2"
                         select
                         name="yearOfPassing"
-                        label="Year of Passing"
+                        label="(Expected) Year of Passing"
                         value={inputField.yearOfPassing}
                         variant="filled"
                         onChange={event=>props.handleChangeInput(index,event)}>
@@ -247,7 +252,7 @@ export default function Academics(props) {
                         </TextField>
                         <TextField
                         name="outOf"
-                        label="Out Of"
+                        label="Out Of (If %, then enter 100, for CGPA it is 4/10)"
                         value={inputField.outOf} 
                         variant="filled"
                         onChange={event=>props.handleChangeInput(index,event)}>
@@ -283,7 +288,7 @@ export default function Academics(props) {
                     </div>
                     
                 ))}
-                <p style={{fontSize:"13px"}}>Note: If you are editing the form, Please fill this section again.</p>
+                <p style={{fontSize:"13px"}}>Note: If you are editing the form , Please fill all entries of the Academic section again.</p>
             </form>
             <hr/>
         </Container>

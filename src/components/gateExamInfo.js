@@ -43,20 +43,21 @@ export default function GateExamInfo(props) {
              {props.inputFields.map((inputField,index)=>(
                  <div className="p-5 si_div" key={index}>
                         <h1>Gate exam info</h1>
-                        <p>If you are from an IIT and have not appeared for GATE exam, fill the details as mentioned below:</p>
+                        <p>If you are applying the following category :<br/>
+SPONSORED / PROJECT STAFF / PART-TIME category, then GATE score is not mandatory. So please fill the following info in the boxes below.</p>
                         <ol style={{marginBottom:"5%"}}>
-                            <li>Registration No. : -1</li>
-                            <li>Gate Score out of 1000 : -1</li>
-                            <li>Gate Rank : -1</li>
-                            <li>Gate coap registration no. : -1</li>
-                            <li>Gate Paper Code : Not Applicable (NA)</li>
-                            <li>Gate exam date : today's date</li>
-                            <li>Valid Upto : today's date</li>
+                             <li> Registration No. (11 digits) : 10000000000 </li> 
+                            <li> Gate Score out of 1000 : 0 </li> 
+                            <li> Gate Rank : 0 </li> 
+                            <li> Gate coap registration no. : COAP00000000 </li> 
+                            <li> Gate Paper Code : Not Applicable (NA) </li> 
+                            <li> Gate exam date : 01-01-1965 </li> 
+                            <li> Valid Upto : 01-01-1965 </li>
                         </ol>
                         
                         <div className="row">
                             <div className="col-sm-6 text-center">
-                                <Label>Registration No.</Label>
+                                <Label>Registration No.<br/> <span style={{fontSize:"10px"}}>(If your gate registration number is CS20S61226031 then enter ONLY 20S61226031 here)</span> </Label>
                                 <TextField className="textfield" name="registrationNo" onBlur={props.handleBlur(index,"registrationNo")} value={inputField.registrationNo} variant="filled" helperText={props.errors.registrationNo} error={Boolean(props.errors.registrationNo)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
                             <div className="col-sm-6 text-center">
@@ -93,8 +94,8 @@ export default function GateExamInfo(props) {
                                 <TextField className="textfield" name="validUpto" type="date" onBlur={props.handleBlur(index,"validUpto")} value={inputField.validUpto} variant="filled" helperText={props.errors.validUpto} error={Boolean(props.errors.validUpto)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
                             <div className="col-sm-6 text-center">
-                                <Label>Gate coap registration no.</Label>
-                                <TextField className="textfield" name="coapRegistrationNo" onBlur={props.handleBlur(index,"coapRegistrationNo")} value={inputField.coapRegistrationNo} variant="filled" helperText={props.errors.coapRegistrationNo} error={Boolean(props.errors.coapRegistrationNo)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
+                                <Label>COAP registration no.</Label>
+                                <TextField className="textfield" name="coapRegistrationNo" placeholder="Format: COAP12345678" onBlur={props.handleBlur(index,"coapRegistrationNo")} value={inputField.coapRegistrationNo} variant="filled" helperText={props.errors.coapRegistrationNo} error={Boolean(props.errors.coapRegistrationNo)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
                             
                         </div>

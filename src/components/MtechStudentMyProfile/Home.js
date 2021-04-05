@@ -32,6 +32,7 @@ export default function Home(props) {
 
         //for apply more
         var apply = document.getElementById("apply");
+        var applyhelper = document.getElementById("applyhelper");
         // if(str=="false")
         // {
         //     document.getElementById('apply').style.visibility = 'hidden';
@@ -46,6 +47,9 @@ export default function Home(props) {
         else if(props.data.personalInfoUploadStatus && (!props.data?null:props.data.applications.length <= 0)){
             document.getElementById('apply').style.visibility = 'visible';
             apply.innerHTML="Apply";
+
+            document.getElementById('applyhelper').style.visibility = 'visible';
+            applyhelper.innerHTML="Thank You for submitting the Basic Information, now please fill your MTECH application by clicking the Apply button.";
         }
         else if(!props.data?null:props.data.applications.length > 0){
             document.getElementById('apply').style.visibility = 'visible';
@@ -75,6 +79,7 @@ export default function Home(props) {
                     </div>
                 </div>
                 <div className="details">
+                <p id="applyhelper" style={{color: "blue" , paddingLeft:"20px"}}></p>
                 <button className="mtech_btn" id="apply" onClick ={()=>{window.location.href = "/applymore/"+props.data._id}} style={{background:'Salmon',color:"black"}}>Apply</button>
                     <div className="status">
                         <h4>Filled Forms</h4>

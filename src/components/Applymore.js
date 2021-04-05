@@ -123,13 +123,13 @@ export default function Applymore(props) {
         if(touched[0].coapRegistrationNo && coapRegistrationNo.length==0)
             errors.coapRegistrationNo = 'Please fill the box';
         else if(touched[0].coapRegistrationNo && !coapreg.test(coapRegistrationNo) && coapRegistrationNo!=-1)
-            errors.coapRegistrationNo = 'Gate coap registration Number format is wrong';
+            errors.coapRegistrationNo = 'Gate coap registration Number format is wrong ';
 
         const registrationNoreg = /^[1-9][0-9][a-zA-Z0-9]{9}$/;
         if(touched[0].registrationNo && registrationNo.length==0)
             errors.registrationNo = 'Please fill the box';
         else if(touched[0].registrationNo && !registrationNoreg.test(registrationNo) && registrationNo!=-1)
-            errors.registrationNo = 'Registration Number format is wrong';
+            errors.registrationNo = 'Registration Number format is wrong (If your gate registration number is CS20S61226031 then enter ONLY 20S61226031 here) ';
 
         if(touched[0].gateScore && gateScore.length==0)
             errors.gateScore = 'Please fill the box';
