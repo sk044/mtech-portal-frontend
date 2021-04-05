@@ -11,7 +11,16 @@ export default function Home(props) {
     
 
     setTimeout(window.onload =  () => {
-
+            
+        if(props.data === null)
+        {
+            var i = 0;
+            while(props.data !== null)
+            {
+                console.log(i);
+                i = i+1;
+            }
+        }
         //for scorecard
         var str2 = !props.data?null:props.data.gateScoreCard;
         if(str2 != null){
@@ -35,8 +44,11 @@ export default function Home(props) {
         //     document.getElementById('apply').style.visibility = 'hidden';
         // }
         // else 
-        
-        if(str == "true" && (!props.data?null:props.data.applications.length <= 0)){
+        if(str=="false")
+        {
+            document.getElementById('apply').style.visibility = 'hidden';
+        }
+        else if(str == "true" && (!props.data?null:props.data.applications.length <= 0)){
             document.getElementById('apply').style.visibility = 'visible';
             apply.innerHTML="Apply";
         }
