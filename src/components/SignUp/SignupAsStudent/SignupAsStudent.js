@@ -64,7 +64,7 @@ const SignupAsStudent = (props) => {
             console.log(data);         
             // console.log(data.status)
             if(data.status == 422){
-                alert("User with this emailID already exists !!")
+                alert("User with this emailID already exists or Password length is less than 8 or Phone No. should be exactly 10 digits !!")
             }else{
                 window.location.href="/";
             }
@@ -174,7 +174,7 @@ const SignupAsStudent = (props) => {
                 control={Input}
             > 
             <Input className="input_field" 
-                placeholder='Must be more than 6 characters' 
+                placeholder='Must be more than 8 characters' 
                 type='password'
                 value={password}
                 onChange={passwordChange}>
