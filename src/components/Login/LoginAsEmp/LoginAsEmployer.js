@@ -8,6 +8,9 @@ const LoginAsEmployer = () => {
  
     const [emailID, setEmailID] = React.useState('')
     const [password, setPassword] = React.useState('')
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('refreshToken');
+ 
     function emailIDChange(e){
         setEmailID(e.target.value)
         console.log(emailID)
@@ -31,16 +34,19 @@ const LoginAsEmployer = () => {
         fetch('/backend/admin/login', {
             method: "post",
             headers: {
-                "Content-Type": "application/json",
-                'x-auth-token': localStorage.getItem('authToken'),
-                'x-refresh-token': localStorage.getItem('refreshToken'),
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({
                 userName:emailID,
                 password:password
             })
 
-        }).then(res => res.json())
+        }).then((res) => {
+            localStorage.setItem('authToken',res.headers.get("x-auth-token"));
+            localStorage.setItem('refreshToken',res.headers.get("x-refresh-token"));
+
+            return res.json()
+        })
             .then(data => {
                 console.log(data)
                 if (data.AuthErr) {
