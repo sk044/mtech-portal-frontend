@@ -2,6 +2,7 @@
   "name": "iitpatna",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://iitp-mtech-portal-backend.herokuapp.com",
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^5.15.2",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
