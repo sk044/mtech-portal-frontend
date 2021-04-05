@@ -259,7 +259,7 @@ export default function Applymore(props) {
                         </div>
                         </div>
 
-                        <GateExamInfo handleChangeInput={handleChangeInputgateExamInfo} inputFields={gateExamInfo} errors={errors} handleBlur={handleBlur} touched={touched}/>
+                        <GateExamInfo handleChangeInput={handleChangeInputgateExamInfo} inputFields={gateExamInfo} errors={errors} handleBlur={handleBlur} />
 
 
                         <hr></hr>
