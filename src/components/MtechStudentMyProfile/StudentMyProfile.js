@@ -21,7 +21,7 @@ export default function StudentmyProfile(props) {
         setaid(props.match.params.id);
         console.log(aid);
         const id = props.match.params.id;
-        const address = "https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/profile/"+id;
+        const address = "/backend/applicant/profile/"+id;
         console.log(address);
         fetch(address , {
             method : 'get'

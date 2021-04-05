@@ -25,7 +25,7 @@ export default class UploadGate extends Component {
         for (const key of Object.keys(this.state.documentFiles)) {
             formData.append('documentFiles', this.state.documentFiles[key])
         }
-        axios.patch('https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/gateScoreCardUpload/'+this.props.match.params.id , formData, {
+        axios.patch('/backend/applicant/gateScoreCardUpload/'+this.props.match.params.id , formData, {
         }).then(res => {
             console.log(res.data)
         }).then(res=> {console.log(res);

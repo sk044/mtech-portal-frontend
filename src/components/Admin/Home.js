@@ -8,7 +8,7 @@ import { ExportToCsv } from 'export-to-csv';
 export default function Home() {
 
         const getReport = async function(dept){
-            const jsonUrl = 'https://iitp-mtech-portal-backend.herokuapp.com/backend/admin/exportToCSV' //write url
+            const jsonUrl = '/backend/admin/exportToCSV' //write url
 
             const json = await fetch(jsonUrl , {
                 method : 'post',

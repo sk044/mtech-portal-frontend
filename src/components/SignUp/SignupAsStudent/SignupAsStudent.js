@@ -46,7 +46,7 @@ const SignupAsStudent = (props) => {
         console.log(emailID)
         console.log(password)
         console.log(phone)
-        fetch('https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/registration', {
+        fetch('/backend/applicant/registration', {
             method: "post",
             headers: {
                 "Accept" : "application/json",

@@ -18,7 +18,7 @@ export default function ChangePassword() {
         }
     
 
-        const address = "https://iitp-mtech-portal-backend.herokuapp.com/backend/admin/reset-password/"
+        const address = "/backend/admin/reset-password/"
         fetch(address,{
             headers: {
                 'Accept': 'application/json',

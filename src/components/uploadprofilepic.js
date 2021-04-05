@@ -25,7 +25,7 @@ export default class UploadProfilePic extends Component {
         for (const key of Object.keys(this.state.image)) {
             formData.append('image', this.state.image[key])
         }
-        axios.post('https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/profile/pic/'+this.props.match.params.id , formData, {
+        axios.post('/backend/applicant/profile/pic/'+this.props.match.params.id , formData, {
         }).then(res => {
             console.log(res.data)
         }).then(res=> {console.log(res);

@@ -157,7 +157,7 @@ export default function Applymore(props) {
 
         if(Object.values(errors).every(x => x == '') && Object.values(touched[0]).every(x => x==true)){
             // console.log(files);
-            const address = "https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/apply/"+props.match.params.id;
+            const address = "/backend/applicant/apply/"+props.match.params.id;
             fetch(address,{
                 method:"post",
                 headers:{

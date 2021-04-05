@@ -17,7 +17,7 @@ export default function ChangePassword(props) {
             console.log("New Password and confirm password are not matching");    
             return ;
         }
-        const address = "https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/reset-password/"+props.data._id
+        const address = "/backend/applicant/reset-password/"+props.data._id
         fetch(address,{
             headers: {
                 'Accept': 'application/json',

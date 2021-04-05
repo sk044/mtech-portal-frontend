@@ -28,7 +28,7 @@ const LoginAsStudent = () => {
     function OnSubmit(){ 
         // console.log(emailID,password)
  
-        fetch('https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/login', {
+        fetch('/backend/applicant/login', {
             method: "post",
             headers: {
                 "Accept" : "application/json",

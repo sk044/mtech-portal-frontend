@@ -345,7 +345,7 @@ const setUp =  () => {
  
  
 	const id = props.match.params.id;
-	const address = "https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/profile/"+id;
+	const address = "/backend/applicant/profile/"+id;
 	fetch(address , {
 		method : 'get'
 	}).then((res) => {
@@ -519,7 +519,7 @@ const setUp =  () => {
 			
 			if(Object.values(errors).every(x => x=='')){
 				// console.log(files);
-				const address = "https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/saveDetails/"+props.match.params.id;
+				const address = "/backend/applicant/saveDetails/"+props.match.params.id;
 				fetch(address,{
 					method:"post",
 					headers:{

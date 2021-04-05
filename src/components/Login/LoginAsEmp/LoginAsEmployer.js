@@ -28,7 +28,7 @@ const LoginAsEmployer = () => {
     function OnSubmit(){ 
         console.log(emailID,password)
 
-        fetch('https://iitp-mtech-portal-backend.herokuapp.com/backend/admin/login', {
+        fetch('/backend/admin/login', {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
