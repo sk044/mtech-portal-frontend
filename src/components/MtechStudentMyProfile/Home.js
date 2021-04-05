@@ -10,21 +10,21 @@ export default function Home(props) {
     
     
 
-    setTimeout(window.onload =  () => {
-       
-        //for scorecard
-        var str2 = !props.data?null:props.data.gateScoreCard;
+    console.log("Hello"+props.data)
+
+    if(props.data!==undefined){
+        var str2 = props.data===null?null:props.data.documentUploadStatus;
         if(str2 != null){
             var ad8 = document.getElementById("ad8");
             ad8.innerHTML="Uploaded";
         }
 
         //for status of application
-        var str = !props.data?null:props.data.personalInfoUploadStatus.toString();
+        var str = props.data?null:props.data.personalInfoUploadStatus.toString();
         var edfi = document.getElementById("edfi");
 
         console.log(str);
-        if(str == "true"){
+        if(props.data.personalInfoUploadStatus){
             edfi.innerHTML="Edit Basic Application Form";
         }
 
@@ -35,11 +35,13 @@ export default function Home(props) {
         //     document.getElementById('apply').style.visibility = 'hidden';
         // }
         // else 
-        if(str=="false")
+        console.log(!props.data.personalInfoUploadStatus)
+        if(!props.data.personalInfoUploadStatus)
         {
+            console.log("Hidden");
             document.getElementById('apply').style.visibility = 'hidden';
         }
-        else if(str == "true" && (!props.data?null:props.data.applications.length <= 0)){
+        else if(props.data.personalInfoUploadStatus && (!props.data?null:props.data.applications.length <= 0)){
             document.getElementById('apply').style.visibility = 'visible';
             apply.innerHTML="Apply";
         }
@@ -48,9 +50,7 @@ export default function Home(props) {
             apply.innerHTML="Apply More";
         }
 
-
-
-    },100);   // error comes if user logouts before .5 seconds due to this
+    }
 
     
     return (
