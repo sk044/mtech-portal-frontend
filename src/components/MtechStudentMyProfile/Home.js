@@ -19,6 +19,9 @@ export default function Home(props) {
             {
                 console.log(i);
                 i = i+1;
+                
+                if(i>15000){
+                    break;
             }
         }
         else
