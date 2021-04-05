@@ -35,6 +35,19 @@ export default function StudentinformationMtech(props) {
         
     ])
 
+	const [touched,setBlur]=useState([
+        {name:false,dob:false,nationality:false,gender:false,birthCategory:false,category:false,martialStatus:false,physicallyHandicapped:false,guardianOrSpouseName:false,address:false,state:false,pincode:false,email:false,mobileNo:false}, 
+        
+    ])
+
+	const handleBlur=(index,field)=>(evt)=>{
+        console.log(index,field)
+        const values=[...touched];
+        values[index][field]=true;
+        setBlur(values);
+        console.log("touched:",touched);
+    }
+
     const genderOptions = [
         {  label: 'Male', value: 'Male' },
         {  label: 'Female', value: 'Female' },
@@ -427,6 +440,75 @@ const setUp =  () => {
         setProfessionalExp(values);
     }
 
+
+	const validate = () => {
+        const errors = {
+            name:'',
+			dob:'',
+			nationality:'',
+			gender:'',
+			birthCategory:'',
+			category:'',
+			martialStatus:'',
+			physicallyHandicapped:'',
+			guardianOrSpouseName:'',
+			address:'',
+			state:'',
+			pincode:'',
+			email:'',
+			mobileNo:''
+        };
+
+        if(touched[0].name && inputFields[0].name.length==0)
+            errors.name = 'Please fill the box';
+
+        if(touched[0].dob && inputFields[0].dob.length==0)
+            errors.dob = 'Please fill the box';
+        
+        if(touched[0].nationality && inputFields[0].nationality.length==0)
+            errors.nationality = 'Please fill the box';
+
+        if(touched[0].gender && inputFields[0].gender.length==0)
+            errors.gender = 'Please fill the box';
+
+        if(touched[0].birthCategory && inputFields[0].birthCategory.length==0)
+            errors.birthCategory = 'Please fill the box';
+        
+        if(touched[0].category && inputFields[0].category.length==0)
+            errors.category = 'Please fill the box';
+
+        if(touched[0].martialStatus && inputFields[0].martialStatus.length==0)
+            errors.martialStatus = 'Please fill the box';
+
+        if(touched[0].physicallyHandicapped && inputFields[0].physicallyHandicapped.length==0)
+            errors.physicallyHandicapped = 'Please fill the box';
+
+        if(touched[0].guardianOrSpouseName && inputFields[0].guardianOrSpouseName.length==0)
+            errors.guardianOrSpouseName = 'Please fill the box';
+
+        if(touched[0].address && contactDetails[0].address.length==0)
+            errors.address = 'Please fill the box';
+
+        if(touched[0].state && contactDetails[0].state.length==0)
+            errors.state = 'Please fill the box';
+
+        if(touched[0].pincode && contactDetails[0].pincode.length==0)
+            errors.pincode = 'Please fill the box';
+
+        if(touched[0].email && contactDetails[0].email.length==0)
+            errors.email = 'Please fill the box';
+
+		if(touched[0].mobileNo && contactDetails[0].mobileNo.length==0)
+            errors.mobileNo = 'Please fill the box';
+            
+        return errors;
+    }
+        
+    const errors = validate();
+        
+
+
+
 	    // ending handling file upload 
 		const handleSubmit = (e) => {
 			e.preventDefault();
@@ -434,77 +516,82 @@ const setUp =  () => {
 			console.log(contactDetails);
 			console.log(academicQual);
 			console.log(professionalExp);
-			// console.log(files);
-			const address = "https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/saveDetails/"+props.match.params.id;
-			fetch(address,{
-				method:"post",
-				headers:{
-					"Content-Type" : "application/json",
+			
+			if(Object.values(errors).every(x => x=='')){
+				// console.log(files);
+				const address = "https://iitp-mtech-portal-backend.herokuapp.com/backend/applicant/saveDetails/"+props.match.params.id;
+				fetch(address,{
+					method:"post",
+					headers:{
+						"Content-Type" : "application/json",
+						
+					},
+					body:JSON.stringify({
+						name:inputFields[0].name,
+						dob : inputFields[0].dob,
+						nationality : inputFields[0].nationality,
+						gender: inputFields[0].gender,
+						birthCategory: inputFields[0].birthCategory,
+						category:inputFields[0].category,
+						martialStatus: inputFields[0].martialStatus,
+						physicallyHandicapped:inputFields[0].physicallyHandicapped,
+						guardianOrSpouseName: inputFields[0].guardianOrSpouseName,
+
+						contactDetails: {
+							address: contactDetails[0].address,
+							state: contactDetails[0].state,
+							pincode: contactDetails[0].pincode,
+							email: contactDetails[0].email,
+							mobileNo: contactDetails[0].mobileNo,
+					},  
+
+
+					academicQualification : academicQual.map((fields)=>{
+						const obj = {
+							educationLevel:fields.educationLevel,
+							degree : fields.degree,
+							schoolOrCollege : fields.schoolOrCollege,
+							boardOrUniversity : fields.boardOrUniversity,
+							yearOfPassing:fields.yearOfPassing,
+							percentageOrCgpa:fields.percentageOrCgpa,
+							outOf : fields.outOf,
+							currentStatus: fields.currentStatus,
+
+						}
+						return obj;
+					}) ,
+
+					professionalExperience : professionalExp.map((fields)=>{
+						const obj = {
+							experienceType:fields.experienceType,
+							organization : fields.organization,
+							positionHeld : fields.positionHeld,
+							fromDate : fields.fromDate,
+							toDate:fields.toDate,
+							natureOfWork:fields.natureOfWork,
+							isCurrentJob : fields.isCurrentJob,
+							experienceDuration : fields.experienceDuration,
+
+						}
+						return obj;
+					}) ,
 					
-				},
-				body:JSON.stringify({
-					name:inputFields[0].name,
-					dob : inputFields[0].dob,
-              		nationality : inputFields[0].nationality,
-					gender: inputFields[0].gender,
-					birthCategory: inputFields[0].birthCategory,
-					category:inputFields[0].category,
-					martialStatus: inputFields[0].martialStatus,
-					physicallyHandicapped:inputFields[0].physicallyHandicapped,
-					guardianOrSpouseName: inputFields[0].guardianOrSpouseName,
-
-					contactDetails: {
-						address: contactDetails[0].address,
-						state: contactDetails[0].state,
-						pincode: contactDetails[0].pincode,
-						email: contactDetails[0].email,
-						mobileNo: contactDetails[0].mobileNo,
-				},  
-
-
-				academicQualification : academicQual.map((fields)=>{
-                    const obj = {
-                        educationLevel:fields.educationLevel,
-                        degree : fields.degree,
-                        schoolOrCollege : fields.schoolOrCollege,
-                        boardOrUniversity : fields.boardOrUniversity,
-                        yearOfPassing:fields.yearOfPassing,
-						percentageOrCgpa:fields.percentageOrCgpa,
-						outOf : fields.outOf,
-						currentStatus: fields.currentStatus,
-
-                    }
-                    return obj;
-                }) ,
-
-				professionalExperience : professionalExp.map((fields)=>{
-                    const obj = {
-                        experienceType:fields.experienceType,
-                        organization : fields.organization,
-                        positionHeld : fields.positionHeld,
-                        fromDate : fields.fromDate,
-                        toDate:fields.toDate,
-						natureOfWork:fields.natureOfWork,
-						isCurrentJob : fields.isCurrentJob,
-						experienceDuration : fields.experienceDuration,
-
-                    }
-                    return obj;
-                }) ,
-				
-					
+						
+					})
+				}).then(res=>{
+					return res.json() 
 				})
-			}).then(res=>{
-				return res.json() 
-			  })
-			.then(res=> {console.log(res);
-			window.alert('Submitting Form');	
-			window.location.href="/mtechstuprofile/"+props.match.params.id;
-			})
-			.catch(err => console.log(err))
-	
-	
-			console.log("success saving details ");
+				.then(res=> {console.log(res);
+				window.alert('Submitting Form');	
+				window.location.href="/mtechstuprofile/"+props.match.params.id;
+				})
+				.catch(err => console.log(err))
+		
+		
+				console.log("success saving details ");
+			}else {
+				alert("Please keep all the boxes filled");
+			}
 		}
 
 
@@ -526,19 +613,19 @@ const setUp =  () => {
                             <div className="col-sm-6 text-center">
                                 <Label>Name of the Applicant:</Label>
                                 <TextField className="textfield" name="name" 
-								value={inputField.name}				
-								variant="filled" onChange={event=>handleChangeInput(index,event)} ></TextField>
+								value={inputField.name}	onBlur={handleBlur(index,"name")}			
+								variant="filled" helperText={errors.name} error={Boolean(errors.name)} onChange={event=>handleChangeInput(index,event)} ></TextField>
                             </div>
                             <div className="col-sm-6 text-center">
                             <Label>Date of Birth: </Label>
-                                <TextField className="textfield" name="dob" type="date" value={inputField.dob} variant="filled"onChange={event=>handleChangeInput(index,event)}></TextField>
+                                <TextField className="textfield" name="dob" type="date" onBlur={handleBlur(index,"dob")} value={inputField.dob} variant="filled" helperText={errors.dob} error={Boolean(errors.dob)} onChange={event=>handleChangeInput(index,event)}></TextField>
                             </div>
                             
                         </div>
                         <div className="row mt-5">
                         <div className="col-sm-6 text-center">
                             <Label>Nationality:</Label>
-                                <TextField className="textfield" select name="nationality" value={inputField.nationality} variant="filled" onChange={event=>handleChangeInput(index,event)}>
+                                <TextField className="textfield" select name="nationality" onBlur={handleBlur(index,"nationality")} value={inputField.nationality} variant="filled" helperText={errors.nationality} error={Boolean(errors.nationality)} onChange={event=>handleChangeInput(index,event)}>
                                 {nationoptions.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
                                     {option.label}
@@ -548,7 +635,7 @@ const setUp =  () => {
                             </div>
                             <div className="col-sm-6 text-center">
                             <Label>Gender:</Label>
-                                <TextField className="textfield" select name="gender" value={inputField.gender} variant="filled" onChange={event=>handleChangeInput(index,event)}>
+                                <TextField className="textfield" select name="gender" onBlur={handleBlur(index,"gender")} value={inputField.gender} variant="filled" helperText={errors.gender} error={Boolean(errors.gender)} onChange={event=>handleChangeInput(index,event)}>
                                 {genderOptions.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
                                     {option.label}
@@ -561,7 +648,7 @@ const setUp =  () => {
                             
                             <div className="col-sm-6 text-center">
                             <Label>Birth Category :</Label>
-							<TextField className="textfield" select name="birthCategory" value={inputField.birthCategory} variant="filled" onChange={event=>handleChangeInput(index,event)}>
+							<TextField className="textfield" select name="birthCategory" onBlur={handleBlur(index,"birthCategory")} value={inputField.birthCategory} variant="filled" helperText={errors.birthCategory} error={Boolean(errors.birthCategory)} onChange={event=>handleChangeInput(index,event)}>
                                 {categoryOptions.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
                                     {option.label}
@@ -572,7 +659,7 @@ const setUp =  () => {
                             <div className="col-sm-6 text-center">
                             <Label>Category:(Physically Handicapped)</Label>
                                
-                            <TextField className="textfield" select name="physicallyHandicapped" value={inputField.physicallyHandicapped} variant="filled" onChange={event=>handleChangeInput(index,event)}>
+                            <TextField className="textfield" select name="physicallyHandicapped" onBlur={handleBlur(index,"physicallyHandicapped")} value={inputField.physicallyHandicapped} variant="filled" helperText={errors.physicallyHandicapped} error={Boolean(errors.physicallyHandicapped)} onChange={event=>handleChangeInput(index,event)}>
                                 {handiOptions.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
                                     {option.label}
@@ -585,7 +672,7 @@ const setUp =  () => {
                             
                             <div className="col-sm-6 text-center">
                             <Label>Marital Status :</Label>
-                                <TextField className="textfield" select name="martialStatus" value={inputField.martialStatus} variant="filled" onChange={event=>handleChangeInput(index,event)}>
+                                <TextField className="textfield" select name="martialStatus" onBlur={handleBlur(index,"maritalStatus")} value={inputField.martialStatus} variant="filled" helperText={errors.martialStatus} error={Boolean(errors.martialStatus)} onChange={event=>handleChangeInput(index,event)}>
 								{martialStatusOptions.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
                                     {option.label}
@@ -594,8 +681,8 @@ const setUp =  () => {
 								</TextField>
                             </div>
                             <div className="col-sm-6 text-center">
-                            <Label>Father's/Spouce Name :</Label>
-                                <TextField className="textfield" name="guardianOrSpouseName" value={inputField.guardianOrSpouseName} variant="filled" onChange={event=>handleChangeInput(index,event)}></TextField>
+                            <Label>Father's/Spouse Name :</Label>
+                                <TextField className="textfield" name="guardianOrSpouseName" onBlur={handleBlur(index,"guardianOrSpouseName")} value={inputField.guardianOrSpouseName} variant="filled" helperText={errors.guardianOrSpouseName} error={Boolean(errors.guardianOrSpouseName)} onChange={event=>handleChangeInput(index,event)}></TextField>
                             </div>
                            
                         
@@ -605,7 +692,7 @@ const setUp =  () => {
                     </div>
                 ))}
                       <hr/>
-                    <ContactDetails handleChangeInput={handleChangeInputContact} inputFields={contactDetails}/>
+                    <ContactDetails handleChangeInput={handleChangeInputContact} inputFields={contactDetails} errors={errors} handleBlur={handleBlur}/>
                 
             </div>
             
