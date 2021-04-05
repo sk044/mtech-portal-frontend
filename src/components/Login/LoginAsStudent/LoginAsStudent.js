@@ -70,6 +70,8 @@ const LoginAsStudent = () => {
             handleBlur('password');
         }
         // console.log(emailID,password)
+        console.log("errors:",errors);
+        console.log("touched:",touched[0]);
  
         if(Object.values(errors).every(x => x=='') && Object.values(touched[0]).every(x => x==true)){
             fetch('/backend/applicant/login', {
