@@ -15,7 +15,7 @@ import Label from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem';
 export default function StudentinformationMtech(props) {
     const [inputFields,setinputField]=useState([
-        {name:'',dob:'',nationality:'',gender:'',birthCategory:'',category:'',martialStatus:'',physicallyHandicapped:'',guardianOrSpouseName:''},
+        {name:'',dob:'',nationality:'',gender:'',birthCategory:'',martialStatus:'',physicallyHandicapped:'',guardianOrSpouseName:''},
         
     ])
 
@@ -36,7 +36,7 @@ export default function StudentinformationMtech(props) {
     ])
 
 	const [touched,setBlur]=useState([
-        {name:false,dob:false,nationality:false,gender:false,birthCategory:false,category:false,martialStatus:false,physicallyHandicapped:false,guardianOrSpouseName:false,address:false,state:false,pincode:false,email:false,mobileNo:false}, 
+        {name:false,dob:false,nationality:false,gender:false,birthCategory:false,martialStatus:false,physicallyHandicapped:false,guardianOrSpouseName:false,address:false,state:false,pincode:false,email:false,mobileNo:false}, 
         
     ])
 
@@ -369,7 +369,6 @@ const setUp =  () => {
 			inputFields[0].nationality = data.applicantDetails.nationality;
 			inputFields[0].gender = data.applicantDetails.gender;
 			inputFields[0].birthCategory = data.applicantDetails.birthCategory;
-			inputFields[0].category = data.applicantDetails.category;
 			inputFields[0].martialStatus = data.applicantDetails.martialStatus;
 			inputFields[0].physicallyHandicapped = data.applicantDetails.physicallyHandicapped;
 			inputFields[0].guardianOrSpouseName = data.applicantDetails.guardianOrSpouseName;
@@ -378,6 +377,10 @@ const setUp =  () => {
 			// academicQual[0] = data.applicantDetails.academicQualification[0];
 			const values=[...inputFields];
 			setinputField(values);
+
+			Object.keys(touched[0]).forEach(x => touched[0][x]=true);
+			console.log(touched[0]);
+
 		}
 	})
 // },300);	
@@ -446,16 +449,14 @@ const setUp =  () => {
         values.splice(index,1);
         setProfessionalExp(values);
     }
-
-
+	
 	const validate = () => {
-        const errors = {
-            name:'',
+		const errors = {
+			name:'',
 			dob:'',
 			nationality:'',
 			gender:'',
 			birthCategory:'',
-			category:'',
 			martialStatus:'',
 			physicallyHandicapped:'',
 			guardianOrSpouseName:'',
@@ -464,67 +465,72 @@ const setUp =  () => {
 			pincode:'',
 			email:'',
 			mobileNo:''
-        };
-
-        if(touched[0].name && inputFields[0].name.length==0)
-            errors.name = 'Please fill the box';
-
-        if(touched[0].dob && inputFields[0].dob.length==0)
-            errors.dob = 'Please fill the box';
-        
-        if(touched[0].nationality && inputFields[0].nationality.length==0)
-            errors.nationality = 'Please fill the box';
-
-        if(touched[0].gender && inputFields[0].gender.length==0)
-            errors.gender = 'Please fill the box';
-
-        if(touched[0].birthCategory && inputFields[0].birthCategory.length==0)
-            errors.birthCategory = 'Please fill the box';
-        
-        if(touched[0].category && inputFields[0].category.length==0)
-            errors.category = 'Please fill the box';
-
-        if(touched[0].martialStatus && inputFields[0].martialStatus.length==0)
-            errors.martialStatus = 'Please fill the box';
-
-        if(touched[0].physicallyHandicapped && inputFields[0].physicallyHandicapped.length==0)
-            errors.physicallyHandicapped = 'Please fill the box';
-
-        if(touched[0].guardianOrSpouseName && inputFields[0].guardianOrSpouseName.length==0)
-            errors.guardianOrSpouseName = 'Please fill the box';
-
-        if(touched[0].address && contactDetails[0].address.length==0)
-            errors.address = 'Please fill the box';
-
-        if(touched[0].state && contactDetails[0].state.length==0)
-            errors.state = 'Please fill the box';
-
-        if(touched[0].pincode && contactDetails[0].pincode.length==0)
-            errors.pincode = 'Please fill the box';
-
-        if(touched[0].email && contactDetails[0].email.length==0)
-            errors.email = 'Please fill the box';
-
+		};
+	
+		if(touched[0].name && inputFields[0].name.length==0)
+			errors.name = 'Please fill the box';
+	
+		if(touched[0].dob && inputFields[0].dob.length==0)
+			errors.dob = 'Please fill the box';
+		
+		if(touched[0].nationality && inputFields[0].nationality.length==0)
+			errors.nationality = 'Please fill the box';
+	
+		if(touched[0].gender && inputFields[0].gender.length==0)
+			errors.gender = 'Please fill the box';
+	
+		if(touched[0].birthCategory && inputFields[0].birthCategory.length==0)
+			errors.birthCategory = 'Please fill the box';
+	
+		if(touched[0].martialStatus && inputFields[0].martialStatus.length==0)
+			errors.martialStatus = 'Please fill the box';
+	
+		if(touched[0].physicallyHandicapped && inputFields[0].physicallyHandicapped.length==0)
+			errors.physicallyHandicapped = 'Please fill the box';
+	
+		if(touched[0].guardianOrSpouseName && inputFields[0].guardianOrSpouseName.length==0)
+			errors.guardianOrSpouseName = 'Please fill the box';
+	
+		if(touched[0].address && contactDetails[0].address.length==0)
+			errors.address = 'Please fill the box';
+	
+		if(touched[0].state && contactDetails[0].state.length==0)
+			errors.state = 'Please fill the box';
+	
+		if(touched[0].pincode && contactDetails[0].pincode.length==0)
+			errors.pincode = 'Please fill the box';
+		
+		const emailreg = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
+		if(touched[0].email && contactDetails[0].email.length==0)
+			errors.email = 'Please fill the box';
+		else if(touched[0].email && !emailreg.test(contactDetails[0].email))
+            errors.email = 'Email format is wrong ';
+	
+		const mobileNoreg = /^\d{10}$/;
 		if(touched[0].mobileNo && contactDetails[0].mobileNo.length==0)
-            errors.mobileNo = 'Please fill the box';
-            
-        return errors;
-    }
-        
-    const errors = validate();
-        
-
+			errors.mobileNo = 'Please fill the box';
+		else if(touched[0].mobileNo && !mobileNoreg.test(contactDetails[0].mobileNo))
+            errors.mobileNo = 'Phone Number format is wrong ';
+			
+		return errors;
+	}
+		
+	const errors = validate();
+		
+	
+	
 
 
 	    // ending handling file upload 
 		const handleSubmit = (e) => {
 			e.preventDefault();
+			console.log(touched[0]);
 			console.log(inputFields);
 			console.log(contactDetails);
 			console.log(academicQual);
 			console.log(professionalExp);
 			
-			if(Object.values(errors).every(x => x=='')){
+			if(Object.values(errors).every(x => x=='') && Object.values(touched[0]).every(x => x==true)){
 				// console.log(files);
 				const address = "/backend/applicant/saveDetails/"+props.match.params.id;
 				fetch(address,{
@@ -541,7 +547,6 @@ const setUp =  () => {
 						nationality : inputFields[0].nationality,
 						gender: inputFields[0].gender,
 						birthCategory: inputFields[0].birthCategory,
-						category:inputFields[0].category,
 						martialStatus: inputFields[0].martialStatus,
 						physicallyHandicapped:inputFields[0].physicallyHandicapped,
 						guardianOrSpouseName: inputFields[0].guardianOrSpouseName,
@@ -572,14 +577,14 @@ const setUp =  () => {
 
 					professionalExperience : professionalExp.map((fields)=>{
 						const obj = {
-							experienceType:fields.experienceType,
-							organization : fields.organization,
-							positionHeld : fields.positionHeld,
-							fromDate : fields.fromDate,
-							toDate:fields.toDate,
-							natureOfWork:fields.natureOfWork,
-							isCurrentJob : fields.isCurrentJob,
-							experienceDuration : fields.experienceDuration,
+							experienceType:fields.experienceType ? fields.experienceType : null,
+							organization : fields.organization ? fields.organization : null,
+							positionHeld : fields.positionHeld ? fields.positionHeld : null,
+							fromDate : fields.fromDate ? fields.fromDate : null,
+							toDate:fields.toDate ? fields.toDate : null,
+							natureOfWork:fields.natureOfWork ? fields.natureOfWork : null,
+							isCurrentJob : fields.isCurrentJob ? fields.isCurrentJob : null,
+							experienceDuration : fields.experienceDuration ? fields.experienceDuration : null,
 
 						}
 						return obj;
@@ -603,8 +608,10 @@ const setUp =  () => {
 		
 		
 				console.log("success saving details ");
+			}else if(!Object.values(touched[0]).every(x => x==true)){
+				alert("Please keep all the boxes filled.");
 			}else {
-				alert("Please keep all the boxes filled");
+				alert("Please resolve all the errors.");
 			}
 		}
 
@@ -686,7 +693,7 @@ const setUp =  () => {
                             
                             <div className="col-sm-6 text-center">
                             <Label>Marital Status :</Label>
-                                <TextField className="textfield" select name="martialStatus" onBlur={handleBlur(index,"maritalStatus")} value={inputField.martialStatus} variant="filled" helperText={errors.martialStatus} error={Boolean(errors.martialStatus)} onChange={event=>handleChangeInput(index,event)}>
+                                <TextField className="textfield" select name="martialStatus" onBlur={handleBlur(index,"martialStatus")} value={inputField.martialStatus} variant="filled" helperText={errors.martialStatus} error={Boolean(errors.martialStatus)} onChange={event=>handleChangeInput(index,event)}>
 								{martialStatusOptions.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
                                     {option.label}
