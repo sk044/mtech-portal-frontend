@@ -63,6 +63,12 @@ const LoginAsStudent = () => {
 
 
     function OnSubmit(){ 
+        if(emailID.length>0){
+            handleBlur('emailID');
+        }
+        if(password.length>0){
+            handleBlur('password');
+        }
         // console.log(emailID,password)
  
         if(Object.values(errors).every(x => x=='') && Object.values(touched[0]).every(x => x==true)){
@@ -124,7 +130,7 @@ const LoginAsStudent = () => {
                     type='email'
                     value={emailID} 
                     onBlur={handleBlur('emailID')}
-                    onChange={(e) => setEmailID(e.target.value),handleBlur('emailID')}
+                    onChange={(e) => setEmailID(e.target.value)}
                     error={!Boolean(errors.emailID) ? false : {
                         content: errors.emailID,
                         pointing: 'below'
@@ -142,7 +148,7 @@ const LoginAsStudent = () => {
                 >
                     <Form.Input className="input_field" 
                         value={password} 
-                        onChange={(e) => setPassword(e.target.value),handleBlur('password')}
+                        onChange={(e) => setPassword(e.target.value)}
                         placeholder='Must be more than 8 characters' 
                         onBlur={handleBlur('password')}
                         error={!Boolean(errors.password) ? false : {
