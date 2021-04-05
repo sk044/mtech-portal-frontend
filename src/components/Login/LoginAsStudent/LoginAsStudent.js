@@ -124,7 +124,7 @@ const LoginAsStudent = () => {
                     type='email'
                     value={emailID} 
                     onBlur={handleBlur('emailID')}
-                    onChange={(e) => setEmailID(e.target.value)}
+                    onChange={(e) => setEmailID(e.target.value),handleBlur('emailID')}
                     error={!Boolean(errors.emailID) ? false : {
                         content: errors.emailID,
                         pointing: 'below'
@@ -142,7 +142,7 @@ const LoginAsStudent = () => {
                 >
                     <Form.Input className="input_field" 
                         value={password} 
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={(e) => setPassword(e.target.value),handleBlur('password')}
                         placeholder='Must be more than 8 characters' 
                         onBlur={handleBlur('password')}
                         error={!Boolean(errors.password) ? false : {
