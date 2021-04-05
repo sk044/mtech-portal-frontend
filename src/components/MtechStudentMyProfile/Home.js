@@ -12,17 +12,17 @@ export default function Home(props) {
 
     setTimeout(window.onload =  () => {
             
-        if(!props.data)
+        if(!props.data:true:false)
         {
-            var i = 0;
+//             var i = 0;
             while(!props.data?true:false)
             {
-                console.log(i);
-                i = i+1;
+//                 console.log(i);
+//                 i = i+1;
                 
-                if(i>15000){
-                    break;
-            }
+//                 if(i>15000){
+//                     break;
+//             }
         }
         else
         {
