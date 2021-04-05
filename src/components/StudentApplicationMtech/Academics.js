@@ -274,7 +274,7 @@ export default function Academics(props) {
                             <RemoveIcon/>
                         </IconButton>
                     } 
-                   {    (index <5) &&
+                   {    (index <4) &&
                         <IconButton onClick={()=>props.handleAddFields()}>
                             <AddIcon/>
                         </IconButton>
@@ -283,7 +283,7 @@ export default function Academics(props) {
                     </div>
                     
                 ))}
-                <p style={{fontSize:"13px"}}>Note: If you are editing the form , Please fill this section again.</p>
+                <p style={{fontSize:"13px"}}>Note: If you are editing the form, Please fill this section again.</p>
             </form>
             <hr/>
         </Container>

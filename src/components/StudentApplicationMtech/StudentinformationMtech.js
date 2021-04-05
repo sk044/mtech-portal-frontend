@@ -338,8 +338,8 @@ export default function StudentinformationMtech(props) {
 
 ///for edit data
 
-// const setUp =  () => {
-	setTimeout(window.onload =  () => {
+const setUp =  () => {
+	// setTimeout(window.onload =  () => {
 
 	// console.log(props.match.params.id)
 	// const id = {props.match.params.id}
@@ -380,13 +380,13 @@ export default function StudentinformationMtech(props) {
 			setinputField(values);
 		}
 	})
-},300);	
-// };
+// },300);	
+};
 
 
-	// React.useEffect(() => {
-	// 	setUp();
-	// },[]);
+	React.useEffect(() => {
+		setUp();
+	},[]);
 
 ////
 
@@ -591,8 +591,13 @@ export default function StudentinformationMtech(props) {
 					return res.json() 
 				})
 				.then(res=> {console.log(res);
+					console.log(res.message);
+					if(res.message == "Something went wrong ! try again later"){
+						alert("Please fill all the details !!");
+					}else{
 				window.alert('Submitting Form');	
 				window.location.href="/mtechstuprofile/"+props.match.params.id;
+				}
 				})
 				.catch(err => console.log(err))
 		
