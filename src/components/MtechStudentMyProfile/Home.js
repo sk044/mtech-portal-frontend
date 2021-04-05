@@ -100,7 +100,7 @@ export default function Home(props) {
                         <div className="det">
                             <h4 id="bd1">Gate Score Card</h4>    
                             <h4 id="ad8">Not Uploaded</h4>
-                            <h4 ><a href={!props.data?null:props.data.gateScoreCard}>Download</a></h4>
+                            <h4 ><a href={!props.data?null:props.data.gateScoreCard} download="GateScoreCard.pdf">Download</a></h4>
                             </div>
 
                             {/* <div className="det">
