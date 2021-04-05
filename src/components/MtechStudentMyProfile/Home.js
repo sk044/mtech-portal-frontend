@@ -12,7 +12,7 @@ export default function Home(props) {
 
     setTimeout(window.onload =  () => {
             
-        if(props.data)
+        if(!props.data)
         {
             var i = 0;
             while(!props.data)
