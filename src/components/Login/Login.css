@@ -88,6 +88,7 @@ height: 150px;
     border-radius: 15px ;
     overflow: hidden;
     background-color: rgb(181, 239, 247) !important;
+    width: 100%;
 }
 .Body{
     bottom:0;
