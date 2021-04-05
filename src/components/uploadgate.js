@@ -21,10 +21,12 @@ export default class UploadGate extends Component {
     onSubmit(e) {
         e.preventDefault()
 
+        
         var formData = new FormData();
         for (const key of Object.keys(this.state.documentFiles)) {
             formData.append('documentFiles', this.state.documentFiles[key])
         }
+        
         axios.patch('/backend/applicant/gateScoreCardUpload/'+this.props.match.params.id , formData, {
 
             headers: {
@@ -33,14 +35,24 @@ export default class UploadGate extends Component {
             }
 
             
+ 
+        }).then(res=> {
 
-        }).then(res => {
-            console.log(res.data)
-        }).then(res=> {console.log(res);
+            console.log("hello");
             window.alert('Uploading ...');
 			window.location.href="/mtechstuprofile/"+this.props.match.params.id;
-			})
-        .catch(err => console.log(err))
+
+        })
+        .catch(err => {
+        console.log(err);
+        console.log(err.response.status);
+        console.log(err.response.status);
+            if(err.response.status == 500){
+                
+                alert("Only PDF files allowed !! Try again !!");
+            }
+        
+        })
     }
 
 

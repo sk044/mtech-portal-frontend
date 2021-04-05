@@ -35,10 +35,19 @@ export default class UploadProfilePic extends Component {
         }).then(res => {
             console.log(res.data)
         }).then(res=> {console.log(res);
-            window.alert('Uploading ...');
+            window.alert('Upload Successful !!');
 			window.location.href="/mtechstuprofile/"+this.props.match.params.id;
 			})
-        .catch(err => console.log(err))
+        .catch(err => {
+            console.log(err);
+            console.log(err.response.status);
+            console.log(err.response.status);
+                if(err.response.status == 422){
+                    
+                    alert("Only png/jpg/jpeg files allowed !! Try again !!");
+                }
+            
+            }   )
     }
 
     render() {

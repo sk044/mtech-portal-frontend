@@ -11,7 +11,7 @@ export default function Home(props) {
     
 
     console.log("Hello"+props.data);
-    console.log(localStorage.getItem('authToken'));
+    // console.log(localStorage.getItem('authToken'));
 
     if(props.data!==undefined){
         var str2 = props.data===null?null:props.data.gateScoreCard;
@@ -20,6 +20,16 @@ export default function Home(props) {
             var ad8 = document.getElementById("ad8");
             ad8.innerHTML="Uploaded";
         }
+
+        //for image
+       
+        var str11 = props.data===null?null:props.data.image;
+        // if(document.getElementById("ad9") !== null){
+        if(str11 != null){
+            var ad9 = document.getElementById("ad9");
+            ad9.innerHTML="Uploaded";
+        }
+    // }
 
         //for status of application
         var str = props.data?null:props.data.personalInfoUploadStatus.toString();
@@ -104,15 +114,15 @@ export default function Home(props) {
 
                         <div className="det">
                             <h4 id="bd1">Gate Score Card</h4>    
-                            <h4 id="ad8">Not Uploaded</h4>
+                            <h4 id="ad8">Not Uploaded</h4> 
                             <h4 ><a href={!props.data?null:props.data.gateScoreCard} download="GateScoreCard.pdf">Download</a></h4>
                             </div>
 
-                            {/* <div className="det">
-                            <h4 id="bd1">Payment Receipt</h4>    
+                            <div className="det">
+                            <h4 id="bd1">Profile Photo</h4>    
                             <h4 id="ad9">Not Uploaded </h4>
-                            <h4 ><a href={!props.data?null:props.data.paymentReceipt}>Download</a></h4>
-                            </div> */}
+                            <h4 ><a href={!props.data?null:props.data.image}>Download</a></h4>
+                            </div>
 
                         </div>
                     </div>
