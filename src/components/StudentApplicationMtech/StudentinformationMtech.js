@@ -534,6 +534,7 @@ const setUp =  () => {
             			document.getElementById("basicInformationSubmit").innerHTML = "Submitting..."
         		}
 			
+			const errors = validate();
 			if(Object.values(errors).every(x => x=='') && Object.values(inputFields[0]).every(x => x!='') && Object.values(contactDetails[0]).every(x => x!='')){
 				// console.log(files);
 				const address = "/backend/applicant/saveDetails/"+props.match.params.id;
