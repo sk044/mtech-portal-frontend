@@ -289,7 +289,7 @@ export default function Academics(props) {
 
                         <br/>
                       { (index >0) &&
-                        <IconButton onClick={()=>props.handleRemoveFields(index)}>
+                        <IconButton onClick={()=>props.handleRemoveFields(index)}> 
                             <RemoveIcon/>
                         </IconButton>
                     } 
@@ -302,7 +302,9 @@ export default function Academics(props) {
                     </div>
                     
                 ))}
-                <p style={{fontSize:"13px"}}>Note: If you are editing the form , Please fill all entries of the Academic section again.</p>
+                <p style={{fontSize:"13px"}}>Note: <li>If you have selected other in <span style={{fontSize:"16px" , fontWeight:"bold" }}>UG/PG </span> qualification, please fill out this <a onClick={()=> window.open("https://docs.google.com/forms/d/e/1FAIpQLScgdnQzNjZa8l3AL13Xtxy4boANEO2NuvDEqSQQd6dTowQi9Q/viewform?usp=sf_link", "_blank")} style={{fontSize:"16px"  , fontWeight:"bold" }}> Google form </a> </li> 
+                            <li> If you are editing the form , Please fill all entries of the Academic section again. </li> 
+                            </p>
             </form>
             <hr/>
         </Container>
