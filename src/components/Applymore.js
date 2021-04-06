@@ -307,8 +307,8 @@ export default function Applymore(props) {
                             </ol>
 
                         <div className="text-center declaration">
+                        <p style={{fontSize:"16px"}}>Link for payment:  <a onClick={()=> window.open("https://www.onlinesbi.sbi/sbicollect/icollecthome.htm", "_blank")} style={{fontSize:"16px"  , fontWeight:"bold" }}> https://www.onlinesbi.sbi/sbicollect/icollecthome.htm</a> </p>
                 
-                <button className="submit_btn"><td onClick={()=> window.open("https://www.onlinesbi.sbi/sbicollect/icollecthome.htm", "_blank")}>Go to Payment</td></button>
               </div>
               
                         <div className="col-sm-4 text-center">
@@ -358,7 +358,7 @@ export default function Applymore(props) {
                                     I hereby declare that the entries made in this application form are correct to the best of my knowledge and belief. If selected for admission, I promise to abide by the rules and regulations of the Institute. The Institute shall have the right to take any action it deems fit, including expulsion, against me at any time after my admission, if it is found that any information furnished by me is incorrect. I note that the decision of the Institute is final in regard to selection for admission and assignment to a particular department and field of study.
                             </span>
                             <br/>
-                            <button className="submit_btn" onClick={handleSubmit} id="finalSubmit">FINAL SUBMIT</button>
+                            <button className="submit_btn" onClick={handleSubmit} id="finalSubmit" style={{color:"#fff"}}>FINAL SUBMIT</button>
                         </div>       
                     </div>
                     

@@ -787,7 +787,7 @@ function durationCalc(fromDate , toDate){
             
             <div className="declaration">
                 <br/>
-                <button onClick={handleSubmit} id="basicInformationSubmit" >Submit</button>
+                <button onClick={handleSubmit} id="basicInformationSubmit" style={{color:"#fff"}}>Submit</button>
             </div>
         </div>
     )
