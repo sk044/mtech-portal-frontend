@@ -51,8 +51,8 @@ SPONSORED / PROJECT STAFF / PART-TIME category, then GATE score is not mandatory
                             <li> Gate Rank : 0 </li> 
                             <li> Gate coap registration no. : COAP00000000 </li> 
                             <li> Gate Paper Code : Not Applicable (NA) </li> 
-                            <li> Gate exam date : 01-01-1965 </li> 
-                            <li> Valid Upto : 01-01-1965 </li>
+                            <li> Gate Valid From : 01-01-2000 </li> 
+                            <li> Valid Upto : 01-01-2000 </li>
                         </ol>
                         
                         <div className="row">
