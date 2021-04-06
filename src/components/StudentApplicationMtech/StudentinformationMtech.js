@@ -535,7 +535,7 @@ const setUp =  () => {
         		}
 			
 			const errors = validate();
-			if(Object.values(errors).every(x => x=='') && Object.values(inputFields[0]).every(x => x!='') && Object.values(contactDetails[0]).every(x => x!='')){
+			if(Object.values(errors).every(x => x=='') && Object.values(inputFields[0]).every(x => String(x)!='') && Object.values(contactDetails[0]).every(x => String(x)!='')){
 				// console.log(files);
 				const address = "/backend/applicant/saveDetails/"+props.match.params.id;
 				fetch(address,{
@@ -633,7 +633,7 @@ const setUp =  () => {
 		
 		
 				console.log("success saving details ");
-			}else if(!Object.values(inputFields[0]).every(x => x!='') || !Object.values(contactDetails[0]).every(x => x!='')){
+			}else if(!Object.values(inputFields[0]).every(x => String(x)!='') || !Object.values(contactDetails[0]).every(x => String(x)!='')){
 				alert("Please keep all the boxes filled.");
 			}else {
 				alert("Please resolve all the errors.");
