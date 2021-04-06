@@ -197,6 +197,14 @@ export default function Applymore(props) {
                     return res.json() 
             })
             .then(res=> {console.log(res);
+
+                if(res.message == "LogIn Required"){
+                    alert("Invalid token or Token expired !! Redirecting to Login !!");
+                    window.location.href="/";
+                    return ;
+                }
+
+
                 window.alert('Successfully Submitted !!');
                 window.location.href="/mtechstuprofile/"+props.match.params.id;
             })

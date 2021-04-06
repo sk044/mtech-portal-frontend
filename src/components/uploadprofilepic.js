@@ -38,6 +38,13 @@ export default class UploadProfilePic extends Component {
         }).then(res => {
             console.log(res.data)
         }).then(res=> {console.log(res);
+
+            if(res.message == "LogIn Required"){
+                alert("Invalid token or Token expired !! Redirecting to Login !!");
+                window.location.href="/";
+                return ;
+            }
+
             window.alert('Upload Successful !!');
 			window.location.href="/mtechstuprofile/"+this.props.match.params.id;
 			})

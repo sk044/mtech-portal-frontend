@@ -21,6 +21,14 @@ export default function Home() {
                 department: dept,
                 })  
             }).then((res) => {
+
+                if(res.message == "LogIn Required"){
+                    alert("Invalid token or Token expired !! Redirecting to Login !!");
+                    window.location.href="/";
+                    return ;
+                }
+
+
             if(res.ok)
                 return res.json();
         }).catch(err=>console.log(err));

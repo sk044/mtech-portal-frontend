@@ -40,6 +40,12 @@ export default class UploadGate extends Component {
  
         }).then(res=> {
 
+            if(res.message == "LogIn Required"){
+                alert("Invalid token or Token expired !! Redirecting to Login !!");
+                window.location.href="/";
+                return ;
+            }
+
             console.log("hello");
             window.alert('Upload Successful !!');
 			window.location.href="/mtechstuprofile/"+this.props.match.params.id;

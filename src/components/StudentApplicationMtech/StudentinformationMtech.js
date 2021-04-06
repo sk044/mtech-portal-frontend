@@ -601,6 +601,14 @@ const setUp =  () => {
 				})
 				.then(res=> {console.log(res);
 					console.log(res.message);
+
+					if(res.message == "LogIn Required"){
+						alert("Invalid token or Token expired !! Redirecting to Login !!");
+						window.location.href="/";
+						return ;
+					}
+
+
 					if(res.message == "Something went wrong ! try again later"){
 						if(document.getElementById("basicInformationSubmit").innerHTML !==null){
 			             		   document.getElementById("basicInformationSubmit").innerHTML = "Submit"
