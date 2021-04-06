@@ -45,7 +45,7 @@ export default function Applymore(props) {
         {label:'Mathematics & Computing',value:'Mathematics & Computing'},
         {label:'Computer Science & Engineering',value:'Computer Science & Engineering'},
         {label:'Communication System Engineering',value:'Communication System Engineering'},
-        {label:'Mechanical Engineering',value:'Mechnaical Engineering'},
+        {label:'Mechanical Engineering',value:'Mechanical Engineering'},
         {label:'Civil Engineering',value:'Civil Engineering'},
         {label:'Material Science & Engineering',value:'Material Science & Engineering'},
         {label:'VLSI & Embedded Sysytem',value:'VLSI & Embedded Sysytem'},
