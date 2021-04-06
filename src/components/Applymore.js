@@ -154,6 +154,9 @@ export default function Applymore(props) {
     const handleSubmit = () => {
         console.log(inputFields);
         console.log(gateExamInfo);
+        if(document.getElementById("finalSubmit").innerHTML !==null){
+            document.getElementById("finalSubmit").innerHTML = "Submitting..."
+        }
 
         if(Object.values(errors).every(x => x == '') && Object.values(touched[0]).every(x => x==true)){
             // console.log(files);
@@ -194,7 +197,7 @@ export default function Applymore(props) {
                     return res.json() 
             })
             .then(res=> {console.log(res);
-                window.alert('Submitting Form');
+                window.alert('Successfully Submitted !!');
                 window.location.href="/mtechstuprofile/"+props.match.params.id;
             })
             .catch(err => console.log(err))
@@ -204,8 +207,14 @@ export default function Applymore(props) {
             console.log("success saving details and files");
         }
         else if(!Object.values(touched[0]).every(x => x==true)){
+            if(document.getElementById("finalSubmit").innerHTML !==null){
+                document.getElementById("finalSubmit").innerHTML = "FINAL SUBMIT"
+            }
             alert('Please fill all the fields in the form.');
         }else{
+            if(document.getElementById("finalSubmit").innerHTML !==null){
+                document.getElementById("finalSubmit").innerHTML = "FINAL SUBMIT"
+            }
             alert('Please resolve all the errors.');
         }
     }
@@ -324,7 +333,7 @@ export default function Applymore(props) {
                                     I hereby declare that the entries made in this application form are correct to the best of my knowledge and belief. If selected for admission, I promise to abide by the rules and regulations of the Institute. The Institute shall have the right to take any action it deems fit, including expulsion, against me at any time after my admission, if it is found that any information furnished by me is incorrect. I note that the decision of the Institute is final in regard to selection for admission and assignment to a particular department and field of study.
                             </span>
                             <br/>
-                            <button className="submit_btn" onClick={handleSubmit}>FINAL SUBMIT</button>
+                            <button className="submit_btn" onClick={handleSubmit} id="finalSubmit">FINAL SUBMIT</button>
                         </div>       
                     </div>
                     
