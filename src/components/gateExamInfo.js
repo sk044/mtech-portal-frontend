@@ -85,7 +85,7 @@ SPONSORED / PROJECT STAFF / PART-TIME category, then GATE score is not mandatory
                         </div>
                         <div className="row">
                         <div className="col-sm-6 text-center">
-                                <Label>Gate exam date</Label>
+                                <Label>Gate Valid From</Label>
                                 <TextField className="textfield" name="examDate" type="date" onBlur={props.handleBlur(index,"examDate")} value={inputField.examDate} variant="filled" helperText={props.errors.examDate} error={Boolean(props.errors.examDate)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
 
