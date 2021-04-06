@@ -66,7 +66,7 @@ export default function Home(props) {
             apply.innerHTML="Apply More";
         }
     }
-
+    }
     
     return (
         <div>
@@ -131,27 +131,5 @@ export default function Home(props) {
             </div>
         </div>
     )
-}
-else{
-    return(
-        <div>
-            <div className="profile">
-                    <div className="profile_inner">
-                        <div className="profile_img">
-                            <img src={logo} alt=""/>
-                        </div>
-                        <div className="name">
-                            <h1>Welcome , {!props.data?null:props.data.name}</h1>
-                            {/* Applicant Id: <span>{!props.data?null:props.data._id} */}
-                            <h3>
-                                loading...
-                            </h3>
-                               
-                        </div>
-                        
-                    </div>
-                </div>
-        </div>
-        )
-}
+
 }
