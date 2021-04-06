@@ -98,7 +98,7 @@ const SignupAsStudent = (props) => {
         console.log(password)
         console.log(phone)
 
-		if(Object.values(errors).every(x => x=='') && Object.values(touched[0]).every(x => x==true)){
+		if(Object.values(errors).every(x => x=='') && firstName.length!=0 && lastName.length!=0 && emailID.length!=0 && password.length!=0 && phone.length!=0){
 
             fetch('/backend/applicant/registration', {
                 method: "post",
@@ -124,7 +124,7 @@ const SignupAsStudent = (props) => {
                     window.location.href="/";
                 }
                 }).catch(error => console.log(error))
-        }else if(!Object.values(touched[0]).every(x => x==true)){
+        }else if(!firstName.length!=0 || !lastName.length!=0 || !emailID.length!=0 || !password.length!=0 || !phone.length!=0){
             alert("Please keep all the boxes filled.");
         }else {
             alert("Please resolve all the errors.");
