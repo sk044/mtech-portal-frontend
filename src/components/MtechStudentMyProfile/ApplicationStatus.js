@@ -23,7 +23,7 @@ export default function ApplicationStatus(props) {
                         <h4>For Help</h4>
                         <div className="status_details">
                             <div className="det">
-                                <h4 style={{padding:"20px"}}>Contact: +91 6394708415</h4>
+                                <h4 style={{padding:"20px"}}>In case of any doubt or bug, Please click: <button className="submit_btn"><td onClick={()=> window.open("https://docs.google.com/forms/d/e/1FAIpQLSek72l_2mtCi9Xjfiklqsmdy8EjujEKB6qKDFjzzfIX7q416w/viewform", "_blank")}>Help</td></button> </h4>
                             </div>
                         </div>
                     </div>
