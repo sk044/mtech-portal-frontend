@@ -48,7 +48,7 @@ export default class UploadProfilePic extends Component {
 	    if(document.getElementById("uploadProfilePic").innerHTML !==null){
                 document.getElementById("uploadProfilePic").innerHTML = "Upload"
             }
-                if(err.response.status == 422){
+                if(err.response.status == 422 || err.response.status == 500){
                     
                     alert("Only png/jpg/jpeg files allowed !! Try again !!");
                 }
