@@ -632,20 +632,20 @@ const setUp =  () => {
 						<p style={{marginBottom:"5%",textAlign:"center"}}>* After editing, please fill the Academic Qualifications and Work Experience before submitting.</p>
                         <div className="row">
                             <div className="col-sm-6 text-center">
-                                <Label>Name of the Applicant:</Label>
+                                <Label required>Name of the Applicant:</Label>
                                 <TextField className="textfield" name="name" 
 								value={inputField.name}	onBlur={handleBlur(index,"name")}			
 								variant="filled" helperText={errors.name} error={Boolean(errors.name)} onChange={event=>handleChangeInput(index,event)} ></TextField>
                             </div>
                             <div className="col-sm-6 text-center">
-                            <Label>Date of Birth: </Label>
+                            <Label required>Date of Birth: </Label>
                                 <TextField className="textfield" name="dob" type="date" onBlur={handleBlur(index,"dob")} value={inputField.dob} variant="filled" helperText={errors.dob} error={Boolean(errors.dob)} onChange={event=>handleChangeInput(index,event)}></TextField>
                             </div>
                             
                         </div>
                         <div className="row mt-5">
                         <div className="col-sm-6 text-center">
-                            <Label>Nationality:</Label>
+                            <Label required>Nationality:</Label>
                                 <TextField className="textfield" select name="nationality" onBlur={handleBlur(index,"nationality")} value={inputField.nationality} variant="filled" helperText={errors.nationality} error={Boolean(errors.nationality)} onChange={event=>handleChangeInput(index,event)}>
                                 {nationoptions.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
@@ -655,7 +655,7 @@ const setUp =  () => {
                                 </TextField>
                             </div>
                             <div className="col-sm-6 text-center">
-                            <Label>Gender:</Label>
+                            <Label required>Gender:</Label>
                                 <TextField className="textfield" select name="gender" onBlur={handleBlur(index,"gender")} value={inputField.gender} variant="filled" helperText={errors.gender} error={Boolean(errors.gender)} onChange={event=>handleChangeInput(index,event)}>
                                 {genderOptions.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
@@ -668,7 +668,7 @@ const setUp =  () => {
                         <div className="row mt-5">
                             
                             <div className="col-sm-6 text-center">
-                            <Label>Birth Category :</Label>
+                            <Label required>Birth Category :</Label>
 							<TextField className="textfield" select name="birthCategory" onBlur={handleBlur(index,"birthCategory")} value={inputField.birthCategory} variant="filled" helperText={errors.birthCategory} error={Boolean(errors.birthCategory)} onChange={event=>handleChangeInput(index,event)}>
                                 {categoryOptions.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
@@ -678,7 +678,7 @@ const setUp =  () => {
                                 </TextField>                            
 								</div>
                             <div className="col-sm-6 text-center">
-                            <Label>Category:(Physically Handicapped)</Label>
+                            <Label required>Category:(Physically Handicapped)</Label>
                                
                             <TextField className="textfield" select name="physicallyHandicapped" onBlur={handleBlur(index,"physicallyHandicapped")} value={inputField.physicallyHandicapped} variant="filled" helperText={errors.physicallyHandicapped} error={Boolean(errors.physicallyHandicapped)} onChange={event=>handleChangeInput(index,event)}>
                                 {handiOptions.map((option) => (
@@ -692,7 +692,7 @@ const setUp =  () => {
                         <div className="row mt-5">
                             
                             <div className="col-sm-6 text-center">
-                            <Label>Marital Status :</Label>
+                            <Label required>Marital Status :</Label>
                                 <TextField className="textfield" select name="martialStatus" onBlur={handleBlur(index,"martialStatus")} value={inputField.martialStatus} variant="filled" helperText={errors.martialStatus} error={Boolean(errors.martialStatus)} onChange={event=>handleChangeInput(index,event)}>
 								{martialStatusOptions.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
@@ -702,7 +702,7 @@ const setUp =  () => {
 								</TextField>
                             </div>
                             <div className="col-sm-6 text-center">
-                            <Label>Father's/Spouse Name :</Label>
+                            <Label required>Father's/Spouse Name :</Label>
                                 <TextField className="textfield" name="guardianOrSpouseName" onBlur={handleBlur(index,"guardianOrSpouseName")} value={inputField.guardianOrSpouseName} variant="filled" helperText={errors.guardianOrSpouseName} error={Boolean(errors.guardianOrSpouseName)} onChange={event=>handleChangeInput(index,event)}></TextField>
                             </div>
                            
@@ -735,12 +735,6 @@ const setUp =  () => {
                        </div>
             
             <div className="declaration">
-                <h1 className="text-center">Decalaration:</h1>
-                <input type="checkbox" className="checkbox" required></input>
-                
-                <span className="my-5">
-                        I hereby declare that the entries made in this application form are correct to the best of my knowledge and belief. If selected for admission, I promise to abide by the rules and regulations of the Institute. The Institute shall have the right to take any action it deems fit, including expulsion, against me at any time after my admission, if it is found that any information furnished by me is incorrect. I note that the decision of the Institute is final in regard to selection for admission and assignment to a particular department and field of study.
-                </span>
                 <br/>
                 <button onClick={handleSubmit} >submit</button>
             </div>

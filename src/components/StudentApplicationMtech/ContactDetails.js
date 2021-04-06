@@ -53,11 +53,11 @@ const stateOptions=[
                 <h1 className="text-center si_subhead">Contact Details</h1>
                 <div className="row">
                             <div className="col-sm-6 text-center">
-                                <Label>Address</Label>
+                                <Label required>Address</Label>
                                 <TextField className="textfield" name="address" onBlur={props.handleBlur(index,"address")} value={inputField.address} variant="filled" helperText={props.errors.address} error={Boolean(props.errors.address)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
                             <div className="col-sm-6 text-center">
-                                <Label>State</Label>
+                                <Label required>State</Label>
                                 <TextField className="textfield" select name="state" onBlur={props.handleBlur(index,"state")} value={inputField.state} variant="filled" helperText={props.errors.state} error={Boolean(props.errors.state)} onChange={event=>props.handleChangeInput(index,event)}>
                                 {stateOptions.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
@@ -70,18 +70,18 @@ const stateOptions=[
                         </div>
                         <div className="row">
                         <div className="col-sm-6 text-center">
-                            <Label>PinCode</Label>
+                            <Label required>PinCode</Label>
                                 <TextField className="textfield" name="pincode" onBlur={props.handleBlur(index,"pincode")} value={inputField.pincode} variant="filled" helperText={props.errors.pincode} error={Boolean(props.errors.pincode)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
                             <div className="col-sm-6 text-center">
-                            <Label>Email Id</Label>
+                            <Label required>Email Id</Label>
                                 <TextField className="textfield" type="email" name="email" onBlur={props.handleBlur(index,"email")} value={inputField.email} variant="filled" helperText={props.errors.email} error={Boolean(props.errors.email)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
                         </div>
                         <div className="row mt-5">
                             
                             <div className="col-sm-6 text-center">
-                                <Label>Phone No.</Label>
+                                <Label required>Phone No.</Label>
                                 <TextField className="textfield" name="mobileNo" onBlur={props.handleBlur(index,"mobileNo")} value={inputField.mobileNo} variant="filled" helperText={props.errors.mobileNo} error={Boolean(props.errors.mobileNo)} onChange={event=>props.handleChangeInput(index,event)}></TextField>
                             </div>
                            
