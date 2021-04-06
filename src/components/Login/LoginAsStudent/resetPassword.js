@@ -61,10 +61,10 @@ export default class ResetPassword extends React.Component {
         alert("Could not Reset Password.\n Consult Admin");
       });
     }else if(errors.password!=''){
-      alert('Please resolve all the errors');
+      alert('Password should have 8 or more characters');
     }
     else {
-      alert("password do not match")
+      alert("Passwords do not match")
     }
   }
   render() {
