@@ -64,6 +64,9 @@ export default function Home(props) {
         else if(!props.data?null:props.data.applications.length > 0){
             document.getElementById('apply').style.visibility = 'visible';
             apply.innerHTML="Apply More";
+
+            document.getElementById('applyhelper').style.visibility = 'visible';
+            applyhelper.innerHTML="For applying to another department/category, Please click Apply More button:";
         }
     }
     }

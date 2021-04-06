@@ -200,7 +200,16 @@ export default function Applymore(props) {
                 window.alert('Successfully Submitted !!');
                 window.location.href="/mtechstuprofile/"+props.match.params.id;
             })
-            .catch(err => console.log(err))
+            .catch(err => {console.log(err);
+            
+                if(err.response.status == 350 ){
+                
+                    alert("Invalid token or Token expired !! Redirecting to Login !!");
+                    window.location.href="/";
+                }
+
+            
+            })
             
             
             
@@ -281,6 +290,14 @@ export default function Applymore(props) {
    
                         <div className="row">
                         <span style={{fontSize: "11.5px", paddingLeft:"10px"}}>      Go to Payment and put the Payment Reference No. after successful Payment!!</span>
+                        <p style={{ paddingLeft:"10px"}}>Payment Amount</p>
+                        <ol style={{marginBottom:"5%"}}>
+                             <li> General/EWS/OBC-NCL (Male): Rs. 300 </li> 
+                            <li> General/EWS/OBC-NCL (Female): Rs. 150 </li> 
+                            <li> SC/ST/PwD (Male): Rs. 150 </li> 
+                            <li> SC/ST/PwD (Female): Rs. 150 </li> 
+                            </ol>
+
                         <div className="text-center declaration">
                 
                 <button className="submit_btn"><td onClick={()=> window.open("https://www.onlinesbi.sbi/sbicollect/icollecthome.htm", "_blank")}>Go to Payment</td></button>

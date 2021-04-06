@@ -48,13 +48,17 @@ export default class UploadGate extends Component {
         .catch(err => {
         console.log(err);
         console.log(err.response.status);
-        console.log(err.response.status);
 	    if(document.getElementById("gateScoreCardUpload").innerHTML !==null){
                 document.getElementById("gateScoreCardUpload").innerHTML = "Upload"
             }
             if(err.response.status == 500 || err.response.status == 422){
                 
                 alert("Only PDF files allowed !! Try again !!");
+            }
+            if(err.response.status == 350 ){
+                
+                alert("Invalid token or Token expired !! Redirecting to Login !!");
+                window.location.href="/";
             }
         
         })

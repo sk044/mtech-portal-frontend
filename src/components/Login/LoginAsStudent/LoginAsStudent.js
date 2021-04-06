@@ -62,7 +62,12 @@ const LoginAsStudent = () => {
                 }
                 
                             }).catch(err => {
-                console.log(err)
+                console.log(err);
+                if(err.response.status == 350 ){
+                
+                    alert("Invalid token or Token expired !! Redirecting to Login !!");
+                    window.location.href="/";
+                }
         })
 
     }

@@ -44,7 +44,11 @@ export default class UploadProfilePic extends Component {
         .catch(err => {
             console.log(err);
             console.log(err.response.status);
-            console.log(err.response.status);
+            if(err.response.status == 350 ){
+                
+                alert("Invalid token or Token expired !! Redirecting to Login !!");
+                window.location.href="/";
+            }
 	    if(document.getElementById("uploadProfilePic").innerHTML !==null){
                 document.getElementById("uploadProfilePic").innerHTML = "Upload"
             }

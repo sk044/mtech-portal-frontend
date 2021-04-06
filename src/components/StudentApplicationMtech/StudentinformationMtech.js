@@ -31,7 +31,7 @@ export default function StudentinformationMtech(props) {
     ])
 
 	const [professionalExp,setProfessionalExp]=useState([
-        {experienceType:'',organization:'',positionHeld:'',fromDate:'',toDate:'',natureOfWork:'',isCurrentJob:'',experienceDuration:''},
+        {experienceType:'',organization:'',positionHeld:'',fromDate:'',toDate:'',natureOfWork:'',isCurrentJob:'',experienceDuration:'0'},
         
     ])
 
@@ -611,7 +611,16 @@ const setUp =  () => {
 				window.location.href="/mtechstuprofile/"+props.match.params.id;
 				}
 				})
-				.catch(err => console.log(err))
+				.catch(err => {console.log(err);
+
+					if(err.response.status == 350 ){
+                
+						alert("Invalid token or Token expired !! Redirecting to Login !!");
+						window.location.href="/";
+					}
+				
+				
+				})
 		
 		
 				console.log("success saving details ");
