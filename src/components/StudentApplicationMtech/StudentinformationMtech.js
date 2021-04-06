@@ -602,6 +602,9 @@ const setUp =  () => {
 				.then(res=> {console.log(res);
 					console.log(res.message);
 					if(res.message == "Something went wrong ! try again later"){
+						if(document.getElementById("basicInformationSubmit").innerHTML !==null){
+			             		   document.getElementById("basicInformationSubmit").innerHTML = "Submit"
+			            		}
 						alert("Please fill all the details !!");
 					}else{
 				window.alert('Basic Information Successfully Submitted !!');	
@@ -740,7 +743,7 @@ const setUp =  () => {
             
             <div className="declaration">
                 <br/>
-                <button onClick={handleSubmit} id="basicInformationSubmit" >submit</button>
+                <button onClick={handleSubmit} id="basicInformationSubmit" >Submit</button>
             </div>
         </div>
     )
