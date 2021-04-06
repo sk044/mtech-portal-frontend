@@ -116,7 +116,7 @@ const LoginAsEmployer = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     >
                         <Form.Input  className="input_field" 
-                        placeholder='Must be more than 6 characters' 
+                        placeholder='Must be more than 8 characters' 
                         type='password'
                         value={password} 
                         onChange={(e) => setPassword(e.target.value)}
