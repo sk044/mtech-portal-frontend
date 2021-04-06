@@ -146,7 +146,7 @@ const SignupAsStudent = (props) => {
                                <div className="col-md-8 back_form signup_form">
                                <div centered raised fluid >
                                 <Form onSubmit={onSubmit}>
-                                    <h1>Student</h1>
+                                    <h2>Candidate Signup</h2>
                                 <div className="form_login">  
         <Form.Group widths='equal'>
             <Form.Field
@@ -265,7 +265,6 @@ const SignupAsStudent = (props) => {
             </Form.Input>
             </Form.Field>
         </Form.Group>
-        <Form.Checkbox label='I agree to the Terms and Conditions' />
         <div>
         <Form.Field as={Button}
             
