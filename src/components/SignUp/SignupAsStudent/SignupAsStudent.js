@@ -120,6 +120,7 @@ const SignupAsStudent = (props) => {
                 if(data.status == 422){
                     alert("User with this emailID already exists or Password length is less than 8 or Phone No. should be exactly 10 digits !!")
                 }else{
+                    alert("Successfully Registered !!");
                     window.location.href="/";
                 }
                 }).catch(error => console.log(error))
