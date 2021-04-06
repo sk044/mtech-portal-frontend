@@ -36,7 +36,6 @@ export default class ResetPassword extends React.Component {
       let payload={token:this.state.token,newPassword:this.state.password1}
       axios.patch("/backend/resetPassword",payload)
       .then((s)=>{
-        alert("Password Reset Successful !!")
         this.setState({redirect:"/"})
       })
       .catch((e)=>{
@@ -55,10 +54,11 @@ export default class ResetPassword extends React.Component {
     return (
       <div className="base-container register d-flex justify-content-center">
         <div className="shadow-lg border rounded border-dark p-5 m-4 text-light resetPassword" style={{
-          background:"linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,1))",
+          background:"#00e7c9",
+          padding:"40px",
 
         }}>
-          <div className="">
+          <div className="container text-center">
             <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label htmlFor="password1">Password:</label>

@@ -37,7 +37,7 @@ export default class userResetPassword extends React.Component {
      await axios.post('/backend/forgotPassword',payload)
     .then((s)=>
     {
-      alert("Reset Link has been sent to your personal email");
+      alert("Mail has been sent to your personal email");
       setTimeout(() => {
         this.setState({
           loading:false,
@@ -66,10 +66,11 @@ export default class userResetPassword extends React.Component {
           </div>
         ):(
         <div className="shadow-lg border rounded border-dark p-5 m-4 text-light resetPassword" style={{
-          background:"linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,1))",
+          background:"#00e7c9",
+          padding:"40px",
 
         }}>
-          <div className="">
+          <div className="container text-center">
             <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label htmlFor="role">Account Type:</label>
@@ -80,7 +81,7 @@ export default class userResetPassword extends React.Component {
                   </select>
               </div>
               <div className="form-group">
-                <label htmlFor="userName">Username:</label>
+                <label htmlFor="userName">Username (Email Id):</label>
                 <input type="text" className="form-control" placeholder="Enter Username" id="userName" name="userName" value={this.state.userName} required/>
               </div>
 
