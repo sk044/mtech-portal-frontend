@@ -634,8 +634,14 @@ const setUp =  () => {
 		
 				console.log("success saving details ");
 			}else if(!Object.values(inputFields[0]).every(x => String(x)!='') || !Object.values(contactDetails[0]).every(x => String(x)!='')){
+				if(document.getElementById("basicInformationSubmit").innerHTML !==null){
+            				document.getElementById("basicInformationSubmit").innerHTML = "Submit"
+        			}
 				alert("Please keep all the boxes filled.");
 			}else {
+				if(document.getElementById("basicInformationSubmit").innerHTML !==null){
+            				document.getElementById("basicInformationSubmit").innerHTML = "Submit"
+        			}
 				alert("Please resolve all the errors.");
 			}
 		}
