@@ -48,7 +48,7 @@ export default function Applymore(props) {
         {label:'Mechanical Engineering',value:'Mechanical Engineering'},
         {label:'Civil Engineering',value:'Civil Engineering'},
         {label:'Material Science & Engineering',value:'Material Science & Engineering'},
-        {label:'VLSI & Embedded Sysytem',value:'VLSI & Embedded Sysytem'},
+        {label:'VLSI & Embedded System',value:'VLSI & Embedded System'},
       ]
     const Applicanttype=[
         {label:'Regular & Full-Time',value:'Regular & Full-Time'},
