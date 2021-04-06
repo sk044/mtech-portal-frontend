@@ -35,8 +35,6 @@ export default class UploadProfilePic extends Component {
                 'x-refresh-token': localStorage.getItem('refreshToken'),
             }
 
-        }).then(res => {
-            console.log(res.data)
         }).then(res=> {console.log(res);
 
             if(res.message == "LogIn Required"){
