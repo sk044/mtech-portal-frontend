@@ -503,13 +503,13 @@ const setUp =  () => {
 		const emailreg = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
 		if(touched[0].email && contactDetails[0].email.length==0)
 			errors.email = 'Please fill the box';
-		else if(touched[0].email && !emailreg.test(contactDetails[0].email))
+		else if((touched[0].email || contactDetails[0].email.length!=0) && !emailreg.test(contactDetails[0].email))
             errors.email = 'Email format is wrong ';
 	
 		const mobileNoreg = /^\d{10}$/;
 		if(touched[0].mobileNo && contactDetails[0].mobileNo.length==0)
 			errors.mobileNo = 'Please fill the box';
-		else if(touched[0].mobileNo && !mobileNoreg.test(contactDetails[0].mobileNo))
+		else if((touched[0].mobileNo || contactDetails[0].mobileNo.length!=0) && !mobileNoreg.test(contactDetails[0].mobileNo))
             errors.mobileNo = 'Phone Number should have 10 digits';
 			
 		return errors;
