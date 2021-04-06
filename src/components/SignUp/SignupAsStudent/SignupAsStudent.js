@@ -64,7 +64,7 @@ const SignupAsStudent = (props) => {
         const passwordreg = /^.{8,}$/;
 		if(touched[0].password && password.length==0)
 			errors.password = 'Please fill the box';
-        else if(touched[0].password && !passwordreg.test(password))
+        else if((touched[0].password || password.length!=0) && !passwordreg.test(password))
             errors.password = 'Password should have 8 or more characters';
 
         if(touched[0].firstName && firstName.length==0)
@@ -76,13 +76,13 @@ const SignupAsStudent = (props) => {
         const phonereg = /^\d{10}$/;
         if(touched[0].phone && phone.length==0)
 			errors.phone = 'Please fill the box';
-        else if(touched[0].phone && !phonereg.test(phone))
+        else if((touched[0].phone || phone.length!=0) && !phonereg.test(phone))
             errors.phone = 'Phone Number should have 10 digits';
 		
 		const emailIDreg = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
 		if(touched[0].emailID && emailID.length==0)
 			errors.emailID = 'Please fill the box';
-		else if(touched[0].emailID && !emailIDreg.test(emailID))
+		else if((touched[0].emailID || emailID.length!=0) && !emailIDreg.test(emailID))
             errors.emailID = 'Email format is wrong ';
 		
 			
