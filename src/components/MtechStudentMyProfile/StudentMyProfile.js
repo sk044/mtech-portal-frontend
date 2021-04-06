@@ -39,7 +39,12 @@ export default function StudentmyProfile(props) {
         }).then((data)=> {
             console.log(data);
             setData(data);
-        }).catch(err=>console.log(err))
+        }).catch(err=>{console.log(err);
+            
+            alert("Invalid token or Token expired !! Redirecting to Login !!");
+            window.location.href="/";
+        
+        })
         },[]);
 
     const funchome = () => {
