@@ -530,6 +530,10 @@ const setUp =  () => {
 			console.log(academicQual);
 			console.log(professionalExp);
 			
+			if(document.getElementById("basicInformationSubmit").innerHTML !==null){
+            			document.getElementById("basicInformationSubmit").innerHTML = "Submitting..."
+        		}
+			
 			if(Object.values(errors).every(x => x=='') && Object.values(touched[0]).every(x => x==true)){
 				// console.log(files);
 				const address = "/backend/applicant/saveDetails/"+props.match.params.id;
@@ -600,7 +604,7 @@ const setUp =  () => {
 					if(res.message == "Something went wrong ! try again later"){
 						alert("Please fill all the details !!");
 					}else{
-				window.alert('Submitting Form');	
+				window.alert('Basic Information Successfully Submitted !!');	
 				window.location.href="/mtechstuprofile/"+props.match.params.id;
 				}
 				})
@@ -736,7 +740,7 @@ const setUp =  () => {
             
             <div className="declaration">
                 <br/>
-                <button onClick={handleSubmit} >submit</button>
+                <button onClick={handleSubmit} id="basicInformationSubmit" >submit</button>
             </div>
         </div>
     )
