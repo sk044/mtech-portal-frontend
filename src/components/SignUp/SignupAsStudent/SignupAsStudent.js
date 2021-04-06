@@ -17,8 +17,19 @@ const SignupAsStudent = (props) => {
     const [emailID,setEmailID] = React.useState('');
     const [password,setPassword] = React.useState('');
     const [phone, setPhone] = React.useState('');
+    const [touched,setBlur]=React.useState([
+        {firstName:false,lastName:false,emailID:false,password:false,phone:false}, 
+    ])
     const [stumessage, setStuMessage] = React.useState('');
     const [signupStuSuccess, setSignupStuSuccess] = React.useState(false)
+
+    const handleBlur=(field)=>(evt)=>{
+        console.log(0,field)
+        const values=[...touched];
+        values[0][field]=true;
+        setBlur(values);
+        console.log("touched:",touched);
+    }
     function firstNameChange(e){
         setFirstName(e.target.value)
         console.log(firstName)
@@ -40,35 +51,83 @@ const SignupAsStudent = (props) => {
         setPhone(e.target.value)
         console.log(phone)
     }
+
+    const validate = () => {
+		const errors = {
+            firstName: '',
+            lastName: '',
+			emailID:'',
+            password: '',
+            phone: '',
+		};
+	
+        const passwordreg = /^.{8,}$/;
+		if(touched[0].password && password.length==0)
+			errors.password = 'Please fill the box';
+        else if(touched[0].password && !passwordreg.test(password))
+            errors.password = 'Password should have 8 or more characters';
+
+        if(touched[0].firstName && firstName.length==0)
+			errors.firstName = 'Please fill the box';
+
+        if(touched[0].lastName && lastName.length==0)
+			errors.lastName = 'Please fill the box';
+
+        const phonereg = /^\d{10}$/;
+        if(touched[0].phone && phone.length==0)
+			errors.phone = 'Please fill the box';
+        else if(touched[0].phone && !phonereg.test(phone))
+            errors.phone = 'Phone Number should have 10 digits';
+		
+		const emailIDreg = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
+		if(touched[0].emailID && emailID.length==0)
+			errors.emailID = 'Please fill the box';
+		else if(touched[0].emailID && !emailIDreg.test(emailID))
+            errors.emailID = 'Email format is wrong ';
+		
+			
+		return errors;
+	}
+		
+	const errors = validate();
+
     const onSubmit = () => {
         console.log(firstName)
         console.log(lastName)
         console.log(emailID)
         console.log(password)
         console.log(phone)
-        fetch('/backend/applicant/registration', {
-            method: "post",
-            headers: {
-                "Accept" : "application/json",
-                "Content-Type": "application/json", 
-                'x-auth-token': localStorage.getItem('authToken'),
-                'x-refresh-token': localStorage.getItem('refreshToken'),
-            },
-            body:JSON.stringify({
-                userName:emailID,
-                password:password,
-                name:`${firstName} ${lastName}`,
-                mobileNo:phone 
-            })
-        }).then(data => {
-            console.log(data);         
-            // console.log(data.status)
-            if(data.status == 422){
-                alert("User with this emailID already exists or Password length is less than 8 or Phone No. should be exactly 10 digits !!")
-            }else{
-                window.location.href="/";
-            }
-            }).catch(error => console.log(error))
+
+		if(Object.values(errors).every(x => x=='') && Object.values(touched[0]).every(x => x==true)){
+
+            fetch('/backend/applicant/registration', {
+                method: "post",
+                headers: {
+                    "Accept" : "application/json",
+                    "Content-Type": "application/json", 
+                    'x-auth-token': localStorage.getItem('authToken'),
+                    'x-refresh-token': localStorage.getItem('refreshToken'),
+                },
+                body:JSON.stringify({
+                    userName:emailID,
+                    password:password,
+                    name:`${firstName} ${lastName}`,
+                    mobileNo:phone 
+                })
+            }).then(data => {
+                console.log(data);         
+                // console.log(data.status)
+                if(data.status == 422){
+                    alert("User with this emailID already exists or Password length is less than 8 or Phone No. should be exactly 10 digits !!")
+                }else{
+                    window.location.href="/";
+                }
+                }).catch(error => console.log(error))
+        }else if(!Object.values(touched[0]).every(x => x==true)){
+            alert("Please keep all the boxes filled.");
+        }else {
+            alert("Please resolve all the errors.");
+        }
     }
 
  
@@ -97,11 +156,16 @@ const SignupAsStudent = (props) => {
                 label='First name'
                 className="form_label"
             >
-                <Input className="input_field" 
+                <Form.Input className="input_field" 
                     placeholder='First name' 
                     type="text"
                     value={firstName}
+                    onBlur={handleBlur('firstName')}
                     onChange={firstNameChange}
+                    error={!Boolean(errors.firstName) ? false : {
+                        content: errors.firstName,
+                        pointing: 'below'
+                    }}
                     />
             </Form.Field>
             <Form.Field
@@ -112,11 +176,16 @@ const SignupAsStudent = (props) => {
             label='Last name'
             
             >
-               <Input className="input_field" 
+               <Form.Input className="input_field" 
                placeholder='Last name' 
                type="text"
                value={lastName}
+               onBlur={handleBlur('lastName')}
                 onChange={lastNameChange}
+                error={!Boolean(errors.lastName) ? false : {
+                    content: errors.lastName,
+                    pointing: 'below'
+                }}
                /> 
             </Form.Field>
             
@@ -129,11 +198,16 @@ const SignupAsStudent = (props) => {
                 label='Phone number'
                 
             >
-                <Input className="input_field" 
+                <Form.Input className="input_field" 
                 placeholder='10 digit mobile number' 
                 type="number"
                 value={phone}
+                onBlur={handleBlur('phone')}
                 onChange={phoneChange}
+                error={!Boolean(errors.phone) ? false : {
+                    content: errors.phone,
+                    pointing: 'below'
+                }}
                 /> 
             </Form.Field>
         
@@ -158,12 +232,17 @@ const SignupAsStudent = (props) => {
                 placeholder='name@gmail.com'  
                 
             >
-                <Input className="input_field" 
+                <Form.Input className="input_field" 
                     placeholder="name@gmail.com" 
                     type="email" 
+                    onBlur={handleBlur('emailID')}
                     value={emailID}
+                    error={!Boolean(errors.emailID) ? false : {
+                        content: errors.emailID,
+                        pointing: 'below'
+                    }}
                     onChange={emailIDChange}>
-                </Input>
+                </Form.Input>
             </Form.Field>
         </Form.Group>
         <Form.Group widths='equal'>
@@ -173,12 +252,17 @@ const SignupAsStudent = (props) => {
                 label='Password'
                 control={Input}
             > 
-            <Input className="input_field" 
+            <Form.Input className="input_field" 
                 placeholder='Must be more than 8 characters' 
                 type='password'
                 value={password}
+                onBlur={handleBlur('password')}
+                error={!Boolean(errors.password) ? false : {
+                    content: errors.password,
+                    pointing: 'below'
+                }}
                 onChange={passwordChange}>
-            </Input>
+            </Form.Input>
             </Form.Field>
         </Form.Group>
         <Form.Checkbox label='I agree to the Terms and Conditions' />

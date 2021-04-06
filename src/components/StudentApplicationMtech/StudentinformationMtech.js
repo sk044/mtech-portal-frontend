@@ -510,7 +510,7 @@ const setUp =  () => {
 		if(touched[0].mobileNo && contactDetails[0].mobileNo.length==0)
 			errors.mobileNo = 'Please fill the box';
 		else if(touched[0].mobileNo && !mobileNoreg.test(contactDetails[0].mobileNo))
-            errors.mobileNo = 'Phone Number format is wrong ';
+            errors.mobileNo = 'Phone Number should have 10 digits';
 			
 		return errors;
 	}
