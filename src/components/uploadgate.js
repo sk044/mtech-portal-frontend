@@ -20,7 +20,9 @@ export default class UploadGate extends Component {
 
     onSubmit(e) {
         e.preventDefault()
-
+	if(document.getElementById("gateScoreCardUpload").innerHTML !==null){
+            document.getElementById("gateScoreCardUpload").innerHTML = "Uploading..."
+        }
         
         var formData = new FormData();
         for (const key of Object.keys(this.state.documentFiles)) {
@@ -39,7 +41,7 @@ export default class UploadGate extends Component {
         }).then(res=> {
 
             console.log("hello");
-            window.alert('Uploading ...');
+            window.alert('Upload Successful !!');
 			window.location.href="/mtechstuprofile/"+this.props.match.params.id;
 
         })
