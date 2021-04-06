@@ -74,7 +74,7 @@ class Signup extends Component{
                                 <Form size='big' className="LoginForm">
                                     <div className="LoginPageButtonDiv">
                                     <Button.Group size='large' className="mb-5 StudentOrEmployerTogggle">
-                                        <Button onClick={this.toggleToStudent} className={this.state.sButtonActive=== true ? 'activeClass':'normalClass'}>Student</Button>
+                                        <Button onClick={this.toggleToStudent} className={this.state.sButtonActive=== true ? 'activeClass':'normalClass'}>Candidate</Button>
                                         
                                         <Button onClick={this.toggleToEmployer} className={this.state.eButtonActive === true ? 'activeClass':'normalClass'}>Faculty</Button>
                                     </Button.Group>
