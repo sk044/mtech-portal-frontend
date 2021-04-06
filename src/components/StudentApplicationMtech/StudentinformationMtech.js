@@ -31,7 +31,7 @@ export default function StudentinformationMtech(props) {
     ])
 
 	const [professionalExp,setProfessionalExp]=useState([
-        {experienceType:'',organization:'',positionHeld:'',fromDate:'',toDate:'',natureOfWork:'',isCurrentJob:'',experienceDuration:'0'},
+        {experienceType:'',organization:'',positionHeld:'',fromDate:'',toDate:'',natureOfWork:'',isCurrentJob:'',experienceDuration:''},
         
     ])
 
@@ -394,6 +394,26 @@ const setUp =  () => {
 ////
 
 
+function durationCalc(fromDate , toDate){
+       
+    var year1 = Number(fromDate.split('-')[0]);
+    var year2 = Number(toDate.split('-')[0]);
+    var month1 = Number(fromDate.split('-')[1]);
+    var month2 = Number(toDate.split('-')[1]);
+
+
+    var diff = year2 - year1;
+    diff = diff * 12;
+    diff = diff + month2;
+    diff = diff - month1;
+
+    console.log(diff)
+    return diff;
+
+
+
+}
+
 
 
     const handleChangeInput=(index,event)=>{
@@ -589,7 +609,7 @@ const setUp =  () => {
 							toDate:fields.toDate ? fields.toDate : null,
 							natureOfWork:fields.natureOfWork ? fields.natureOfWork : null,
 							isCurrentJob : fields.isCurrentJob ? fields.isCurrentJob : null,
-							experienceDuration : fields.experienceDuration ? fields.experienceDuration : null,
+							experienceDuration : durationCalc(fields.fromDate , fields.toDate) ? durationCalc(fields.fromDate , fields.toDate)+ " " + "Months" : null,
 
 						}
 						return obj;
