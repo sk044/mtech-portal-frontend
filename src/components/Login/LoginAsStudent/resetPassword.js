@@ -36,6 +36,7 @@ export default class ResetPassword extends React.Component {
       let payload={token:this.state.token,newPassword:this.state.password1}
       axios.patch("/backend/resetPassword",payload)
       .then((s)=>{
+        alert("Password Reset Successful !!")
         this.setState({redirect:"/"})
       })
       .catch((e)=>{
