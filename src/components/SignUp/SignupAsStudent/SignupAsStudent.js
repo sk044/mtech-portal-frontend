@@ -98,6 +98,7 @@ const SignupAsStudent = (props) => {
         console.log(password)
         console.log(phone)
 
+        const errors = validate();
 		if(Object.values(errors).every(x => x=='') && firstName.length!=0 && lastName.length!=0 && emailID.length!=0 && password.length!=0 && phone.length!=0){
 
             fetch('/backend/applicant/registration', {
