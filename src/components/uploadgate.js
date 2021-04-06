@@ -77,7 +77,7 @@ export default class UploadGate extends Component {
                             <input type="file" name="documentFiles" onChange={this.onFileChange} multiple />
                         </div>
                         <div className="form-group">
-                            <button className="btn btn-primary" type="submit">Upload</button>
+                            <button className="btn btn-primary" type="submit" id="gateScoreCardUpload">Upload</button>
                         </div>
                         </div>
                     </form>
