@@ -49,7 +49,10 @@ export default class UploadGate extends Component {
         console.log(err);
         console.log(err.response.status);
         console.log(err.response.status);
-            if(err.response.status == 500){
+	    if(document.getElementById("gateScoreCardUpload").innerHTML !==null){
+                document.getElementById("gateScoreCardUpload").innerHTML = "Upload"
+            }
+            if(err.response.status == 500 || err.response.status == 422){
                 
                 alert("Only PDF files allowed !! Try again !!");
             }
