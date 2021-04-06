@@ -37,7 +37,7 @@ export default class userResetPassword extends React.Component {
      await axios.post('/backend/forgotPassword',payload)
     .then((s)=>
     {
-      alert("Mail has been sent to your personal email");
+      alert("Reset Link has been sent to your personal email");
       setTimeout(() => {
         this.setState({
           loading:false,
