@@ -12,6 +12,8 @@ export default class ResetPassword extends React.Component {
     match:0,
   };
 }
+
+
   handleChange = async (event) =>
   {
     const target = event.target;
@@ -29,9 +31,26 @@ export default class ResetPassword extends React.Component {
       this.setState({match:0});
     }
   }
+
+  validate(password1,password2) {
+    const errors = {
+      password:'',
+    };
+
+    const passwordreg = /^.{8,}$/;
+		if(!passwordreg.test(password1) || !passwordreg.test(password2))
+			errors.password = 'Password should have 8 or more characters';
+
+    return errors;
+  }
+
+  
+  
   handleSubmit = (event)=>{
     event.preventDefault();
-    if(this.state.match===1)
+    const errors = this.validate(this.state.password1,this.state.password2);
+    console.log(errors);
+    if(this.state.match===1 && errors.password=='')
     {
       let payload={token:this.state.token,newPassword:this.state.password1}
       axios.patch("/backend/resetPassword",payload)
@@ -41,12 +60,18 @@ export default class ResetPassword extends React.Component {
       .catch((e)=>{
         alert("Could not Reset Password.\n Consult Admin");
       });
+    }else if(errors.password!=''){
+      alert('Please resolve all the errors');
     }
     else {
       alert("password do not match")
     }
   }
   render() {
+
+    const errors = this.validate(this.state.password1,this.state.password2);
+
+
     if (this.state.redirect)
     {
       return <Redirect to={this.state.redirect} />
@@ -71,6 +96,9 @@ export default class ResetPassword extends React.Component {
 
               {
                 this.state.match?<p className="text-success">"Password Match"</p>:<p className="text-danger">"Password Mismatch"</p>
+              }
+              {
+                errors.password? <p className="text-danger">"{errors.password}"</p> : <p className="text-success">"Password has 8 or more characters"</p>
               }
             <button type="submit" className="btn btn-primary">Reset Password</button>
             </form>
