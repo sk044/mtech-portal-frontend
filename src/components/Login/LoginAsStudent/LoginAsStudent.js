@@ -116,7 +116,7 @@ const LoginAsStudent = () => {
             
             <Link style={{fontSize:'12px'}} to="/user-reset-password">Forgot Password?</Link>
             <br/><br/>
-            <p style={{fontSize:"13px"}}>Note: Use Laptop or PC for better experience !!</p>
+            <p style={{fontSize:"15px"}}>Note: Use Laptop or PC for best experience !!</p>
            
         </div>
     )
