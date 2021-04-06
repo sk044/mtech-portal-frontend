@@ -20,7 +20,10 @@ export default class UploadProfilePic extends Component {
 
     onSubmit(e) {
         e.preventDefault()
-
+	
+	if(document.getElementById("uploadProfilePic").innerHTML !==null){
+            document.getElementById("uploadProfilePic").innerHTML = "Uploading..."
+        }
         var formData = new FormData();
         for (const key of Object.keys(this.state.image)) {
             formData.append('image', this.state.image[key])
@@ -69,7 +72,7 @@ export default class UploadProfilePic extends Component {
                             <input type="file" name="image" onChange={this.onFileChange} multiple />
                         </div>
                         <div className="form-group">
-                            <button className="btn btn-primary" type="submit">Upload</button>
+                            <button className="btn btn-primary" type="submit" id="uploadProfilePic">Upload</button>
                         </div>
                         </div>
                     </form>
