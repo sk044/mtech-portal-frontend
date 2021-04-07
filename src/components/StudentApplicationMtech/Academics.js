@@ -309,6 +309,7 @@ export default function Academics(props) {
                 ))}
                 <p style={{fontSize:"13px"}}>Note: <li>If you have selected <span style={{fontSize:"16px" , fontWeight:"bold", color:"red" }}>Other </span> in <span style={{fontSize:"16px" , fontWeight:"bold" }}>UG/PG </span> qualification, please fill out this <a onClick={()=> window.open("https://docs.google.com/forms/d/e/1FAIpQLScgdnQzNjZa8l3AL13Xtxy4boANEO2NuvDEqSQQd6dTowQi9Q/viewform?usp=sf_link", "_blank")} style={{fontSize:"16px"  , fontWeight:"bold" }}> Google form </a> </li> 
                 <li  style={{fontWeight:"bold"}}> Please fill the educational details in chronological order, first 10th, 12th equivalent, UG, then PG etc. </li> 
+                <li  style={{fontWeight:"bold"}}>If you had done Dual Degree(B.Tech+M.Tech or B.Sc+M.Sc), then add this qualification in both UG and PG.</li> 
                             <li> If you are editing the form , Please fill all entries of the Academic section again. </li> 
                             </p>
             </form>
