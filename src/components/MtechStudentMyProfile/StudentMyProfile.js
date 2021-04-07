@@ -80,7 +80,7 @@ export default function StudentmyProfile(props) {
                          {
                               home ? 
                               <button onClick={funchome} type='btn' className="active tab_btn pic_btn">Home</button> : 
-                              <button nClick ={()=>{window.location.href = "/mtechstuprofile/"+props.match.params.id}} type='btn' className="pic_btn">Home</button>
+                              <button onClick ={()=>{window.location.href = "/mtechstuprofile/"+props.match.params.id}} type='btn' className="pic_btn">Home</button>
                          }
                       
                     </Col>
