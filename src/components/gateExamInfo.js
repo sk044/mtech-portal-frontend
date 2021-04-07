@@ -44,7 +44,8 @@ export default function GateExamInfo(props) {
                  <div className="p-5 si_div" key={index}>
                         <h1>Gate exam info</h1>
                         <p>If you are applying the following category :<br/>
-SPONSORED / PROJECT STAFF / PART-TIME category, then GATE score is not mandatory. So please fill the following info in the boxes below.</p>
+SPONSORED / PROJECT STAFF / PART-TIME category candidates and IIT Graduates with 8.0 and above CPI, for whom GATE score is not mandatory, may fill the following dummy info in the boxes below.
+(OTHER CANDIDATES MUST FILL IN THE ACTUAL DETAILS)</p>
                         <ol style={{marginBottom:"5%"}}>
                              <li> Registration No. (11 digits) : 10000000000 </li> 
                             <li> Gate Score out of 1000 : 0 </li> 
