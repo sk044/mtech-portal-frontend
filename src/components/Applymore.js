@@ -358,7 +358,7 @@ export default function Applymore(props) {
 
 
                             <h1 className="text-center">Decalaration:<br/><span style={{fontSize: "11.5px"}}> You can't edit form this later!!</span></h1>
-                            <input type="checkbox" className="checkbox" required></input>
+                            <input type="checkbox" className="checkbox" checked  required></input>
                             
                             <span className="my-5">
                                     I hereby declare that the entries made in this application form are correct to the best of my knowledge and belief. If selected for admission, I promise to abide by the rules and regulations of the Institute. The Institute shall have the right to take any action it deems fit, including expulsion, against me at any time after my admission, if it is found that any information furnished by me is incorrect. I note that the decision of the Institute is final in regard to selection for admission and assignment to a particular department and field of study.
