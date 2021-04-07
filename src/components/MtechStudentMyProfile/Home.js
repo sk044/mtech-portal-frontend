@@ -102,7 +102,7 @@ export default function Home(props) {
                             <h3>
                             <button className="mtech_btn" id="edfi" onClick ={()=>{window.location.href = "/mtechstuinfo/"+props.data._id}} data={props.data} style={{}}>Fill Basic Application Form</button>
                             <button className="mtech_btn" id="ugsc" onClick ={()=>{window.location.href = "/uploadgate/"+props.data._id}} style={{}}>Upload Gate Score Card</button>
-                            <button className="mtech_btn" id="upp" onClick ={()=>{window.location.href = "/uploadprofilepic/"+props.data._id} style={{}}}>Upload Profile Pic</button>                           
+                            <button className="mtech_btn" id="upp" onClick ={()=>{window.location.href = "/uploadprofilepic/"+props.data._id}} style={{}}>Upload Profile Pic</button>                           
                             </h3>                              
                         </div>     
                     </div>
