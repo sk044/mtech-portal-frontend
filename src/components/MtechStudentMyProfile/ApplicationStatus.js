@@ -20,7 +20,7 @@ export default function ApplicationStatus(props) {
                 </div>
                 <div className="details">
 
-                        <p style={{fontSize:"20px" , color:"red" , fontWeight:"bold" ,padding:"20px"}}>For eligibilty and other details browse the Advertisement:  <a onClick={()=> window.open("https://www.onlinesbi.sbi/sbicollect/icollecthome.htm", "_blank")} style={{fontSize:"16px"  , fontWeight:"bold" }}> IITP- Mtech_Advertisement</a> </p>
+                        <p style={{fontSize:"20px" , color:"red" , fontWeight:"bold" ,padding:"20px"}}>For eligibilty and other details browse the Advertisement:  <a onClick={()=> window.open("https://drive.google.com/file/d/1hm8zubpkHrkWviBom0pAmvuyFNiJO3Jx/view?usp=sharing", "_blank")} style={{fontSize:"16px"  , fontWeight:"bold" , cursor: "pointer"}}> IITP- Mtech_Advertisement</a> </p>
                         
 
                     <div className="status">
