@@ -38,6 +38,7 @@ export default function Academics(props) {
         {label:"B.Arch (B.Arch)",value:"B.Arch (B.Arch)"},
         {label:"B.Tech Biotechnology (B.Tech Bio)",value:"B.Tech Biotechnology (B.Tech Bio)"},
         {label:"B.Tech Chemical Engineering  (BTECH_CH)",value:"B.Tech Chemical Engineering  (BTECH_CH)"},
+        {label:"B.Tech Civil Engineering  (BTECH_CE)",value:"B.Tech Civil Engineering  (BTECH_CE)"},
         {label:"B.Tech_Material science and Engineering (BTECH_MSE)",value:"B.Tech_Material science and Engineering (BTECH_MSE)"},
         {label:"B.Tech Mechanical Engineering (BTECH_ME)",value:"B.Tech Mechanical Engineering (BTECH_ME)"},
         {label:"B.Tech Computer Science and Engineering (BTECH_CSE)",value:"B.Tech Computer Science and Engineering (BTECH_CSE)"},
