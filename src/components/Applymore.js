@@ -249,6 +249,12 @@ export default function Applymore(props) {
                 {inputFields.map((inputField,index)=>(
                     <div className="p-5 si_div" key={index}>
                         <h1 className="text-center si_subhead">Mtech Form</h1>
+                        <br/>
+                        <hr></hr>
+                        <p style={{fontSize:"20px" , color:"red" , fontWeight:"bold"}}>For eligibilty and other details browse the Advertisement:  <a onClick={()=> window.open("https://www.onlinesbi.sbi/sbicollect/icollecthome.htm", "_blank")} style={{fontSize:"16px"  , fontWeight:"bold" }}> IITP- Mtech_Advertisement</a> </p>
+                        
+                        <hr></hr>
+                        <br/>
                         
                         <div className="row mt-5">
                         <div className="col-sm-4 text-center">
