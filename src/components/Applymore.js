@@ -303,6 +303,7 @@ export default function Applymore(props) {
 
    
                         <div className="row">
+                        <span style={{fontWeight:"bold",color:"red"}}>Candidates, applying for more than one specialization, must submit a separate application with separate application fee<br/></span>
                         <span style={{fontSize: "11.5px", paddingLeft:"10px"}}>      Go to Payment and put the Payment Reference No. after successful Payment!!</span>
                         <p style={{ paddingLeft:"10px"}}>Payment Amount</p>
                         <ol style={{marginBottom:"5%"}}>
