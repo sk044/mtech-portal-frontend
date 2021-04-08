@@ -60,7 +60,7 @@ export default function Academics(props) {
         {label:"B.Tech Petrochemical Engineering (BTECH_PE )",value:"B.Tech Petrochemical Engineering (BTECH_PE )"},
         {label:"Bachelor of Arts (BA)",value:"Bachelor of Arts (BA)"},
         {label:"Bachelor of Commerce  (BCOM)",value:"Bachelor of Commerce  (BCOM)"},
-        {label:"Bachelor of BACHELOR OF EDUCATION (B.Ed.)",value:"Bachelor of BACHELOR OF EDUCATION (B.Ed.)"},
+        {label:"Bachelor of EDUCATION (B.Ed.)",value:"Bachelor of EDUCATION (B.Ed.)"},
         {label:"Bachelor of Computer Applications (BCA)",value:"Bachelor of Computer Applications (BCA)"},
         {label:"Bachelor of Design (B.Des)",value:"Bachelor of Design (B.Des)"},
         {label:"Bachelor of Dental Surgery (BDS)",value:"Bachelor of Dental Surgery (BDS)"},
