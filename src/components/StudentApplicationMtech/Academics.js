@@ -304,7 +304,7 @@ export default function Academics(props) {
                         </TextField>
                         <TextField
                         name="outOf"
-                        label="Out Of (If %, then enter 100, for CGPA it is 4/10)"
+                        label="Out Of (If %, then enter 100, for CGPA it is 4 or 10)"
                         value={inputField.outOf} 
                         variant="filled"
                         onChange={event=>props.handleChangeInput(index,event)}>
