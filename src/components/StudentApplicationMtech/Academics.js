@@ -44,10 +44,12 @@ export default function Academics(props) {
         {label:"B.Tech Ceramic Technology",value:"B.Tech Ceramic Technology"},
         {label:"B.Tech Chemical Engineering  (BTECH_CH)",value:"B.Tech Chemical Engineering  (BTECH_CH)"},
         {label:"B.Tech Civil Engineering  (BTECH_CE)",value:"B.Tech Civil Engineering  (BTECH_CE)"},
+        {label:"B.Tech Computer Engineering",value:"B.Tech Computer Engineering"},
         {label:"B.Tech Computer Science and Engineering (BTECH_CSE)",value:"B.Tech Computer Science and Engineering (BTECH_CSE)"},
         {label:"B.Tech CONSTRUCTION ENGINEERING",value:"B.Tech in CONSTRUCTION ENGINEERING"},
         {label:"B.Tech Electrical and Electronics Engineering (BTECH_EEE)",value:"B.Tech Electrical and Electronics Engineering (BTECH_EEE)"},
         {label:"B.Tech Electrical Engineering (BTECH_EE )",value:"B.Tech Electrical Engineering (BTECH_EE )"},
+        {label:"B.Tech ELECTRONICS ENGINEERING",value:"B.Tech ELECTRONICS ENGINEERING"},
         {label:"B.Tech Electronics & Communication Engineering (BTECH_ECE)",value:"B.Tech Electronics & Communication Engineering (BTECH_ECE)"},
         {label:"B.Tech Electronics and Computer engineering",value:"B. Tech Electronics and Computer engineering"},
         {label:"B.Tech ELECTRONICS AND TELECOMMUNICATION",value:"B.Tech ELECTRONICS AND TELECOMMUNICATION"},
@@ -57,12 +59,14 @@ export default function Academics(props) {
         {label:"B.Tech Information and Communication Technology with minor in Computational Science",value:"B.Tech Information and Communication Technology with minor in Computational Science"},
         {label:"B.Tech Information Science and Engineering",value:"B.Tech Information Science and Engineering"},
         {label:"B.Tech Information Technology (BTECH_IT)",value:"B. Tech Information Technology (BTECH_IT)"},
+        {label:"B.Tech INSTRUMENTATION ENGINEERING",value:"B.Tech INSTRUMENTATION ENGINEERING"},
         {label:"B.Tech Mechanical Engineering (BTECH_ME)",value:"B.Tech Mechanical Engineering (BTECH_ME)"},
         {label:"B.Tech Mechatronics Engineering",value:"B.Tech Mechatronics Engineering"},
+        {label:"B.Tech_Material science and Engineering (BTECH_MSE)",value:"B.Tech_Material science and Engineering (BTECH_MSE)"},
         {label:"B.Tech Metallurgical and Materials Engineering",value:"B.Tech Metallurgical and Materials Engineering"},
         {label:"B.Tech Petrochemical Engineering (BTECH_PE )",value:"B.Tech Petrochemical Engineering (BTECH_PE )"},
         {label:"B.Tech Production Engineering",value:"B.Tech Production Engineering"},
-        {label:"B.Tech_Material science and Engineering (BTECH_MSE)",value:"B.Tech_Material science and Engineering (BTECH_MSE)"},
+        {label:"B.Tech Production and Industrial",value:"B.Tech Production and Industrial"},
         {label:"Bachelor of Arts (BA)",value:"Bachelor of Arts (BA)"},
         {label:"Bachelor of Commerce  (BCOM)",value:"Bachelor of Commerce  (BCOM)"},
         {label:"Bachelor of Computer Applications (BCA)",value:"Bachelor of Computer Applications (BCA)"},
@@ -82,10 +86,12 @@ export default function Academics(props) {
         {label:"BE Ceramic Technology",value:"BE Ceramic Technology"},
         {label:"BE Chemical Engineering (BE_CH )",value:"BE Chemical Engineering (BE_CH )"},
         {label:"BE Civil Engineering (BE_CE)",value:"BE Civil Engineering (BE_CE)"},
+        {label:"BE Computer Engineering",value:"BE Computer Engineering"},
         {label:"BE Computer Science and Engineering (BE_CSE )",value:"BE Computer Science and Engineering (BE_CSE )"},
         {label:"BE CONSTRUCTION ENGINEERING",value:"BE in CONSTRUCTION ENGINEERING"},
         {label:"BE Electrical and Electronics Engineering (BE_EEE )",value:"BE Electrical and Electronics Engineering (BE_EEE )"},
         {label:"BE Electrical Engineering (BE_EE )",value:"BE Electrical Engineering (BE_EE )"},
+        {label:"BE ELECTRONICS ENGINEERING",value:"BE ELECTRONICS ENGINEERING"},
         {label:"BE Electronics & Communication Engineering (BE_ECE)",value:"BE Electronics & Communication Engineering (BE_ECE)"},
         {label:"BE Electronics and Computer engineering",value:"BE Electronics and Computer engineering"},
         {label:"BE ELECTRONICS AND TELECOMMUNICATION",value:"BE ELECTRONICS AND TELECOMMUNICATION"},
@@ -95,13 +101,15 @@ export default function Academics(props) {
         {label:"BE Industrial and Systems Engineering (ISE)",value:"BE Industrial and Systems Engineering (ISE)"},
         {label:"BE Information and Communication Technology with minor in Computational Science",value:"BE Information and Communication Technology with minor in Computational Science"},
         {label:"BE Information Science and Engineering",value:"BE Information Science and Engineering"},
-        {label:"BE Information Technology (BTECH_IT)",value:"B. E. Information Technology (BTECH_IT)"},
+        {label:"BE Information Technology (BE_IT)",value:"B. E. Information Technology (BTECH_IT)"},
+        {label:"BE INSTRUMENTATION ENGINEERING",value:"BE INSTRUMENTATION ENGINEERING"},
         {label:"BE Material science and Engineering (BE_MSE )",value:"BE_Material science and Engineering (BE_MSE )"},
         {label:"BE Mechanical Engineering (BE_ME)",value:"BE Mechanical Engineering (BE_ME)"},
         {label:"BE Mechatronics Engineering",value:"BE Mechatronics Engineering"},    
         {label:"BE Metallurgical and Materials Engineering",value:"BE Metallurgical and Materials Engineering"},
         {label:"BE Petrochemical Engineering (BE_PE )",value:"BE Petrochemical Engineering (BE_PE )"},
         {label:"BE Production Engineering",value:"BE Production Engineering"},
+        {label:"BE Production and Industrial",value:"BE Production and Industrial"},
         {label:"BFA (Bachelor of Fine Art)",value:"BFA (Bachelor of Fine Art)"},
         {label:"Degree in Graphics Design (GDArt )",value:"Degree in Graphics Design (GDArt )"},
         {label:"Dual Degree (B.Sc+M.Sc.)",value:"Dual Degree (B.Sc+M.Sc.)"},
@@ -115,14 +123,14 @@ export default function Academics(props) {
 
     ]
 
-        // {label:"B.Tech XI124",value:"B.Tech XI124"},
-        // {label:"B.Tech XI125",value:"B.Tech XI125"},
-        // {label:"B.Tech XI126",value:"B.Tech XI126"},
-        // {label:"B.Tech XI127",value:"B.Tech XI127"},
-        // {label:"BE XI124",value:"BE XI124"},
-        // {label:"BE XI125",value:"BE XI125"},
-        // {label:"BE XI126",value:"BE XI126"},
-        // {label:"BE XI127",value:"BE XI127"},
+
+
+
+
+
+
+
+
 
 
     const pgOptions=[
