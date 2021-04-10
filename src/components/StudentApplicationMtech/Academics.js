@@ -123,12 +123,14 @@ export default function Academics(props) {
 
     ]
 
-
-
-
-
-
-
+        // {label:"B.Tech XI124",value:"B.Tech XI124"},
+        // {label:"B.Tech XI125",value:"B.Tech XI125"},
+        // {label:"B.Tech XI126",value:"B.Tech XI126"},
+        // {label:"B.Tech XI127",value:"B.Tech XI127"},
+        // {label:"BE XI124",value:"BE XI124"},
+        // {label:"BE XI125",value:"BE XI125"},
+        // {label:"BE XI126",value:"BE XI126"},
+        // {label:"BE XI127",value:"BE XI127"},
 
 
 
