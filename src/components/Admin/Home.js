@@ -60,6 +60,57 @@ export default function Home() {
 
         };
 
+
+        const exportAll = async function(){
+            const jsonUrl1 = '/backend/admin/exportAllToCSV' //write url
+
+            const json1 = await fetch(jsonUrl1 , {
+                method : 'get',
+                headers: {
+                    "Content-Type": "application/json",
+                    'x-auth-token': localStorage.getItem('authToken'),
+                    'x-refresh-token': localStorage.getItem('refreshToken'),
+                }  
+            }).then((res) => {
+
+                if(res.message == "LogIn Required"){
+                    alert("Invalid token or Token expired !! Redirecting to Login !!");
+                    window.location.href="/";
+                    return ;
+                }
+
+
+            if(res.ok)
+                return res.json();
+        }).catch(err=>console.log(err));
+
+
+             const options = { 
+                fieldSeparator: ',',
+                filename : "Export ALL",
+                quoteStrings: '"',
+                decimalSeparator: '.',
+                showLabels: true, 
+                showTitle: true,
+                title: " M.Tech. Applications",
+                useTextFile: false,
+                useBom: true,
+                useKeysAsHeaders: true,
+                // headers: ['Column 1', 'Column 2', etc...] <-- Won't work with useKeysAsHeaders present!
+              };
+             
+            const csvExporter = new ExportToCsv(options);
+
+
+            if(json1.applicantDetails.length > 0){
+                csvExporter.generateCsv(json1.applicantDetails)
+            }else{
+                alert("No Applications Received Yet")
+            }
+
+
+        };
+
        
 
     return (
@@ -115,6 +166,13 @@ export default function Home() {
                             <div className="det">
                                 <h3>VLSI & Embedded Systems</h3>
                                 <button onClick={() => getReport("VLSI & Embedded Systems")}>Download CSV</button>
+                            </div>
+                            <div className="det">
+                                <h3>******************************************</h3>
+                            </div>
+                            <div className="det">
+                                <h3>Export All</h3>
+                                <button onClick={() => exportAll()}>Download CSV</button>
                             </div>
                             
                         </div>
