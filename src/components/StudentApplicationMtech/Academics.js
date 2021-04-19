@@ -70,6 +70,7 @@ export default function Academics(props) {
         {label:"B.Tech Metallurgical and Materials Engineering",value:"B.Tech Metallurgical and Materials Engineering"},
         {label:"B.Tech Petrochemical Engineering (BTECH_PE )",value:"B.Tech Petrochemical Engineering (BTECH_PE )"},
         {label:"B.Tech PLASTIC TECHNOLOGY",value:"B.Tech PLASTIC TECHNOLOGY"},
+        {label:"B.Tech Polymer Science and Engineering",value:"B.Tech Polymer Science and Engineering"},
         {label:"B.Tech Power Engineering",value:"B.Tech Power Engineering"},
         {label:"B.Tech Production Engineering",value:"B.Tech Production Engineering"},
         {label:"B.Tech Production and Industrial",value:"B.Tech Production and Industrial"},
@@ -121,6 +122,7 @@ export default function Academics(props) {
         {label:"BE Metallurgical and Materials Engineering",value:"BE Metallurgical and Materials Engineering"},
         {label:"BE Petrochemical Engineering (BE_PE )",value:"BE Petrochemical Engineering (BE_PE )"},
         {label:"BE PLASTIC TECHNOLOGY",value:"BE PLASTIC TECHNOLOGY"},
+        {label:"BE Polymer Science and Engineering",value:"BE Polymer Science and Engineering"},
         {label:"BE Power Engineering",value:"BE Power Engineering"},
         {label:"BE Production Engineering",value:"BE Production Engineering"},
         {label:"BE Production and Industrial",value:"BE Production and Industrial"},
@@ -138,11 +140,11 @@ export default function Academics(props) {
 
     ]
 
-        // {label:"B.Tech XI124",value:"B.Tech XI124"},
+        
         // {label:"B.Tech XI125",value:"B.Tech XI125"},
         // {label:"B.Tech XI126",value:"B.Tech XI126"},
         // {label:"B.Tech XI127",value:"B.Tech XI127"},
-        // {label:"BE XI124",value:"BE XI124"},
+
         // {label:"BE XI125",value:"BE XI125"},
         // {label:"BE XI126",value:"BE XI126"},
         // {label:"BE XI127",value:"BE XI127"},
