@@ -117,7 +117,8 @@ const LoginAsStudent = () => {
             <Link style={{fontSize:'12px'}} to="/user-reset-password">Forgot Password?</Link>
             <br/><br/>
             <p style={{fontSize:"15px"}}>Note: Use Laptop or PC for best experience !!</p>
-           
+            <p style={{fontSize:"20px", color:"red"}}>Last date for application submission is 27 April 23:59</p>
+
         </div>
     )
    
