@@ -8,6 +8,7 @@ import Admin from './components/Admin/AdminWindow';
 import SignupAsStudent from './components/SignUp/SignupAsStudent/SignupAsStudent';
 import SignupAsEmployer from './components/SignUp/SignUpAsEmp/SignupAsEmployer';
 import studentinformationMtech from './components/StudentApplicationMtech/StudentinformationMtech';
+import PreviewApplication from './components/StudentApplicationMtech/PreviewApplication';
 import mtechstuprofile from './components/MtechStudentMyProfile/StudentMyProfile';
 import applymore from './components/Applymore';
 import UploadGate from './components/uploadgate';
@@ -28,6 +29,7 @@ const App =() => {
             <Route exact path="/signemp" component={SignupAsEmployer}/>
             <Route exact path="/admin/:id" component={Admin}/>
             <Route exact path="/mtechstuinfo/:id" component={studentinformationMtech}/>
+            <Route exact path="/previewapplication/:id" component={PreviewApplication}/>
             <Route exact path="/mtechstuprofile/:id" component={mtechstuprofile}/>
             <Route exact path="/applymore/:id" component={applymore}/>
             <Route exact path="/uploadgate/:id" component={UploadGate}/>
@@ -44,4 +46,3 @@ const App =() => {
 export default App;
 
   // "proxy": "https://iitp-mtech-portal-backend.herokuapp.com",proxy for package.json
-

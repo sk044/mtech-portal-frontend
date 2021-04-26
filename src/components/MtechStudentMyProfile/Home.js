@@ -64,6 +64,10 @@ export default function Home(props) {
 
             document.getElementById('applyhelper').style.visibility = 'visible';
             applyhelper.innerHTML="Thank You for submitting the Basic Information, now please fill your MTECH application by clicking the Apply button.";
+            
+            if(document.getElementById("preview") !== null){
+                document.getElementById('preview').style.visibility = 'visible';
+            }
         }
         else if(!props.data?null:props.data.applications.length > 0){
             document.getElementById('apply').style.visibility = 'visible';
@@ -71,6 +75,9 @@ export default function Home(props) {
 
             document.getElementById('applyhelper').style.visibility = 'visible';
             applyhelper.innerHTML="For applying to another department/category, Please click Apply More button:";
+            if(document.getElementById("preview") !== null){
+                document.getElementById('preview').style.visibility = 'visible';
+            }
         }
     }
     }
@@ -84,6 +91,9 @@ export default function Home(props) {
         }
         if(document.getElementById("upp") !== null){
             document.getElementById('upp').style.visibility = 'hidden';
+        }
+        if(document.getElementById("preview") !== null){
+            document.getElementById('preview').style.visibility = 'hidden';
         }
     }
 
@@ -101,8 +111,11 @@ export default function Home(props) {
                             <h1>Welcome , {!props.data?null:props.data.name}</h1>
                             <h3>
                             <button className="mtech_btn" id="edfi" onClick ={()=>{window.location.href = "/mtechstuinfo/"+props.data._id}} data={props.data} style={{}}>Fill Basic Application Form</button>
+                            <button className="mtech_btn" id="preview" onClick ={()=>{window.location.href = "/previewapplication/"+props.data._id}} style={{}}>Preview Basic Application Form</button>                           
+
                             <button className="mtech_btn" id="ugsc" onClick ={()=>{window.location.href = "/uploadgate/"+props.data._id}} style={{}}>Upload Gate Score Card</button>
                             <button className="mtech_btn" id="upp" onClick ={()=>{window.location.href = "/uploadprofilepic/"+props.data._id}} style={{}}>Upload Profile Pic</button>                           
+
                             </h3>                              
                         </div>     
                     </div>
