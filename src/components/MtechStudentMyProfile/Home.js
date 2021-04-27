@@ -79,6 +79,14 @@ export default function Home(props) {
                 document.getElementById('preview').style.visibility = 'visible';
             }
         }
+        //For closing the Application, uncomment the lines between //****//
+        //*******//
+        document.getElementById('edfi').style.visibility = 'hidden';
+        document.getElementById('ugsc').style.visibility = 'hidden';
+        document.getElementById('upp').style.visibility = 'hidden';
+        document.getElementById('apply').style.visibility = 'hidden';
+        applyhelper.innerHTML="Applications are now closed! <br /><br /> Since we have received many applications and can’t accept all of you, we will now dedicate some time to go through every application to find the best candidates. <br />You will be informed about the further process accordingly. <br />If you have any doubt, feel free to go to the help section.<br /><br /> Thank you very much for showing so much interest and good luck!";
+        //*******//
     }
     }
     else
